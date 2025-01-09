@@ -15,8 +15,8 @@ export class TabsComponent {
    // Method to download the resume PDF
    downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/Resume.pdf'; // Path to your PDF file
-    link.download = 'John_Doe_Resume.pdf'; // Name for the downloaded file
+    link.href = 'assets/resume.pdf'; // Path to your PDF file
+    link.download = 'resume.pdf'; // Name for the downloaded file
     link.click();
   }
 }
