@@ -1,0 +1,19 @@
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing around content */
+    text-align: center; /* Center-aligns text */
+    max-width: 400px; /* Restricts the width */
+  }
+  
+  .profile-image img {
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid white; /* Optional: Adds a border around the image */
+    width: 150px; /* Adjust size */
+    height: 150px; /* Adjust size */
+  }
+  
+  .profile-name h2 {
+    margin-top: 10px;
+    font-size: 24px;
+  }
