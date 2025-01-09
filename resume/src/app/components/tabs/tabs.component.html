@@ -1,0 +1,27 @@
+<div class="tabs-container">
+    <!-- Tab Buttons -->
+    <div class="tabs-header">
+      <button
+        class="tab-button"
+        *ngFor="let tab of ['Profile', 'Resume']; let i = index"
+        [class.active]="i === activeTab"
+        (click)="setActiveTab(i)">
+        {{ tab }}
+      </button>
+    </div>
+  
+   <!-- Tab Indicator -->
+   <div class="tab-indicator" [style.left]="activeTab * 50 + '%'" [style.width]="'50%'"></div>
+
+  
+    <!-- Tab Content -->
+    <div class="tabs-content">
+      <div class="tab-panel" *ngIf="activeTab === 0">
+        <app-resume></app-resume>
+      </div>
+      <div class="tab-panel" *ngIf="activeTab === 1">
+        <app-resume></app-resume>
+      </div>
+    </div>
+  </div>
+  

@@ -12,7 +12,7 @@ export class ProfileComponent {
   ngOnInit(): void {
     // Navigate to the resume page after 5 seconds
     setTimeout(() => {
-      this.router.navigate(['/resume']);
+      this.router.navigate(['/tabs']);
     }, 5000); // 5000ms = 5 seconds
   }
 }
