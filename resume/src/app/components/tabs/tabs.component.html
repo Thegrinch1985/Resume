@@ -3,7 +3,7 @@
     <div class="tabs-header">
       <button
         class="tab-button"
-        *ngFor="let tab of ['Profile','Skills Tech Stack', 'Resume']; let i = index"
+        *ngFor="let tab of ['Profile','Work Experience','Skills Tech Stack', 'Resume']; let i = index"
         [class.active]="i === activeTab"
         (click)="setActiveTab(i)">
         {{ tab }}
@@ -11,7 +11,7 @@
     </div>
   
    <!-- Tab Indicator -->
-   <div class="tab-indicator" [style.left]="activeTab * 33 + '%'" [style.width]="'33%'"></div>
+   <div class="tab-indicator" [style.left]="activeTab * 25 + '%'" [style.width]="'25%'"></div>
 
   
     <!-- Tab Content -->
@@ -20,9 +20,12 @@
         <app-about-me></app-about-me>
       </div>
       <div class="tab-panel" *ngIf="activeTab === 1">
-       <app-skills-tech-stack></app-skills-tech-stack>
+        <app-work-experience></app-work-experience>
       </div>
       <div class="tab-panel" *ngIf="activeTab === 2">
+       <app-skills-tech-stack></app-skills-tech-stack>
+      </div>
+      <div class="tab-panel" *ngIf="activeTab === 3">
         <app-resume></app-resume>
       </div>
     </div>

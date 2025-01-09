@@ -1,0 +1,13 @@
+.component-container {
+    max-height: 400px; /* Limit the height */
+    max-width: 700px; /* Ensure all components have the same width */
+    margin: 40px auto; /* Center the component */
+    padding: 20px; /* Consistent spacing */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+    background: #fff; /* Neutral background */
+    font-family: 'Roboto', sans-serif; /* Unified font */
+    overflow-y: auto; /* Adds vertical scrollbar if content overflows */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  

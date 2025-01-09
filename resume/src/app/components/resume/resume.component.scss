@@ -1,114 +1,135 @@
 /* Overall Container */
 .resume-container {
-    background-color: #f9f9f9;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /* Needed for profile positioning */
-    font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #afeeee, #ffc0cb); /* Pale turquoise to light pink gradient */
+  color: #333;
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif;
+  position: relative; /* Needed for profile positioning */
+  text-align: center; /* Center-align content */
+}
+
+/* Minimized Profile Picture */
+.profile-minimized {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 70px; /* Slightly larger size for visibility */
+  height: 70px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-minimized img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #fff; /* White border for contrast */
+}
+
+/* Header */
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resume-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.resume-header p {
+  font-size: 18px;
+  color: #555;
+  margin: 5px 0;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Sections */
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 5px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.resume-section ul {
+  list-style-type: none; /* Removed default list styles */
+  padding: 0;
+}
+
+.resume-section ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: transform 0.3s, background 0.3s;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.resume-section ul li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+/* Experience and Education Items */
+.experience-item,
+.education-item {
+  margin-bottom: 15px;
+}
+
+.experience-item h3,
+.education-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #222;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.experience-item p,
+.education-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .resume-container {
+    padding: 15px;
   }
-  
-  /* Minimized Profile Picture */
+
   .profile-minimized {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 60px; /* Small circular image */
+    width: 60px;
     height: 60px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   }
-  
-  .profile-minimized img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: 3px solid #fff; /* White border for contrast */
-  }
-  
-  /* Header */
-  .resume-header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
+
   .resume-header h1 {
     font-size: 28px;
-    margin-bottom: 10px;
   }
-  
+
   .resume-header p {
     font-size: 16px;
-    color: #555;
-    margin: 5px 0;
   }
-  
-  /* Sections */
-  .resume-section {
-    margin-bottom: 25px;
-  }
-  
+
   .resume-section h2 {
     font-size: 22px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-    color: #333;
   }
-  
-  .resume-section ul {
-    list-style-type: square;
-    padding-left: 20px;
-  }
-  
+
   .resume-section ul li {
-    margin-bottom: 8px;
     font-size: 16px;
-    color: #444;
   }
-  
-  .experience-item,
-  .education-item {
-    margin-bottom: 15px;
-  }
-  
-  .experience-item h3,
-  .education-item h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #222;
-  }
-  
-  .experience-item p,
-  .education-item p {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  /* Mobile Responsive */
-  @media (max-width: 600px) {
-    .resume-container {
-      padding: 15px;
-    }
-  
-    .profile-minimized {
-      width: 60px;
-      height: 60px;
-    }
-  
-    .resume-header h1 {
-      font-size: 24px;
-    }
-  
-    .resume-header p {
-      font-size: 14px;
-    }
-  
-    .resume-section h2 {
-      font-size: 20px;
-    }
-  }
-  
+}
