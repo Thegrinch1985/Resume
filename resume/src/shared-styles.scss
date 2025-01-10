@@ -1,13 +1,19 @@
 .component-container {
-    max-height: 400px; /* Limit the height */
-    max-width: 700px; /* Ensure all components have the same width */
-    margin: 40px auto; /* Center the component */
-    padding: 20px; /* Consistent spacing */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Consistent shadow */
-    background: #fff; /* Neutral background */
-    font-family: 'Roboto', sans-serif; /* Unified font */
-    overflow-y: auto; /* Adds vertical scrollbar if content overflows */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+  max-height: 400px; /* Limit the height */
+  max-width: 700px; /* Consistent width for all components */
+  margin: 40px auto; /* Center the component */
+  padding: 20px; /* Add internal spacing */
+  border-radius: 20px; /* Smoother rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Modern layered shadow */
+  background: linear-gradient(145deg, #f4f4f4, #ffffff); /* Subtle gradient background for depth */
+  font-family: 'Poppins', sans-serif; /* Clean and modern font */
+  overflow-y: auto; /* Vertical scroll for overflow content */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+
+  /* Subtle hover effect for modern feel */
+  &:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
   }
-  
+}
