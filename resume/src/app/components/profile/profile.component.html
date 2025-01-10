@@ -1,9 +1,14 @@
 <div class="profile-container">
-    <div class="profile-image">
-      <img src="assets/Donkey_Kong.webp" alt="Profile Picture" />
-    </div>
-    <div class="profile-name">
-      <h2>Donkey Kong</h2>
-    </div>
+  <div class="profile-image">
+    <img src="assets/Donkey_Kong.webp" alt="Profile Picture" />
   </div>
-  
+  <div class="profile-name">
+    <h2>
+      <span *ngFor="let char of typedName; let i = index" 
+            [class.bounce]="true" 
+            [style.animation-delay.ms]="i * 200">
+        {{ char }}
+      </span>
+    </h2>
+  </div>
+</div>
