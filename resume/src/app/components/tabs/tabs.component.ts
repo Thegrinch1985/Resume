@@ -15,8 +15,8 @@ export class TabsComponent {
    // Method to download the resume PDF
    downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/resume.pdf'; // Path to your PDF file
-    link.download = 'resume.pdf'; // Name for the downloaded file
+    link.href = 'assets/Howie_Lynch_Resume_January_2025.pdf'; // Path to your PDF file
+    link.download = 'Howie_Lynch_Resume_January_2025.pdf'; // Name for the downloaded file
     link.click();
   }
 }
