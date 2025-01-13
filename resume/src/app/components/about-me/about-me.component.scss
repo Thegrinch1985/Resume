@@ -44,11 +44,10 @@
   gap: 10px; /* Adds consistent spacing between items */
 }
 
-/* Individual About Me Items */
 .about-me-container ul li {
   font-size: 16px; /* Consistent with skills list */
   margin: 0; /* Removes margin (handled by gap) */
-  background: rgba(255, 255, 255, 0.8); /* Softer background */
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(135, 206, 235, 0.8)); /* Soft gradient */
   padding: 8px 12px; /* Compact padding for balance */
   border-radius: 10px; /* Rounded corners for consistency */
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle text depth */
@@ -59,7 +58,7 @@
 
 /* Hover Effects */
 .about-me-container ul li:hover {
-  background: rgba(255, 255, 255, 1); /* Brighter background on hover */
-  transform: scale(1.05); /* Subtle hover scaling */
+  background: linear-gradient(135deg, rgba(135, 206, 235, 1), rgba(255, 182, 193, 1)); /* More vibrant gradient */
+  // transform: scale(1.05); /* Subtle hover scaling */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }

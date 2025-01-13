@@ -17,7 +17,7 @@ export class WorkExperienceComponent {
         'Collaborated with designers to create responsive and user-friendly UI.',
         'Improved application performance by 25% through code optimization.'
       ],
-      expanded: true // Add this property
+      expanded: false // Add this property
     },
     {
       company: 'Web Solutions',
@@ -28,7 +28,7 @@ export class WorkExperienceComponent {
         'Implemented SEO strategies to improve website rankings.',
         'Integrated third-party APIs to enhance functionality.'
       ],
-      expanded: true // Add this property
+      expanded: false // Add this property
     }
   ];
 
