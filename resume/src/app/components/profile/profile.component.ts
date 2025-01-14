@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
 
     // Navigate to the resume page after 5 seconds
     setTimeout(() => {
-      this.router.navigate(['/tabs']);
+      this.router.navigate(['/start']);
     }, 5000); // 5000ms = 5 seconds
   }
 

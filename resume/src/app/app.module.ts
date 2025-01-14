@@ -10,6 +10,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillsTechStackComponent } from './components/skills-tech-stack/skills-tech-stack.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
     TabsComponent,
     AboutMeComponent,
     SkillsTechStackComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

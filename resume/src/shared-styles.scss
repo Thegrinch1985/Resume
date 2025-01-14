@@ -1,19 +1,78 @@
 .component-container {
-  height: 400px; /* Fixed height to ensure uniform size */
-  width: 700px; /* Fixed width for consistent alignment */
-  margin: 20px auto; /* Reduce vertical spacing */
-  padding: 15px; /* Slightly smaller internal spacing */
-  border-radius: 20px; /* Smoother rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Modern layered shadow */
+  width: 600px; /* Fixed width for the cube */
+  height: 500px; /* Fixed height for the cube */
+  margin: 40px auto; /* Center the cube horizontally */
+  padding: 20px; /* Padding inside the cube */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Modern shadow */
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6)); /* Gradient background */
-  font-family: 'Poppins', sans-serif; /* Clean and modern font */
-  overflow-y: auto; /* Vertical scroll for overflow content */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
-
-  /* Subtle hover effect for modern feel */
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  
+  /* Enable 3D perspective for Rubik's Cube effect */
+  perspective: 1200px; /* Adjust perspective to make 3D effect more noticeable */
+  position: relative;
+  
+  /* Allow overflow content to be scrollable */
+  overflow: auto; /* Automatically adds scrollbars when needed */
+  max-height: 600px; /* Maximum height, allows scroll bar to show when content overflows */
+  
+  /* Subtle hover effect */
   &:hover {
-    transform: scale(1.02); /* Slightly enlarge on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  }
+
+  /* Exciting random animation on load */
+  animation: randomExcitingEffect 1.5s ease-out forwards;
+
+  /* Keyframes for random animation */
+  @keyframes randomExcitingEffect {
+    0% {
+      transform: scale(0.8) rotateY(0deg);
+      opacity: 0;
+    }
+    25% {
+      transform: scale(1.1) rotateY(20deg);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.05) rotateY(-20deg);
+      opacity: 0.8;
+    }
+    75% {
+      transform: scale(1.15) rotateY(30deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  /* Cube movement animations */
+  &.move-left {
+    animation: moveLeft 1s ease-out forwards;
+  }
+
+  &.move-right {
+    animation: moveRight 1s ease-out forwards;
+  }
+
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300px);
+    }
+  }
+
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(300px);
+    }
   }
 }

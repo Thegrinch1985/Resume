@@ -1,4 +1,9 @@
 <div class="start-page">
+  <!-- Navigation bar at the top -->
+  <app-navigation *ngIf="showNavigation"></app-navigation>
+  
+  <!-- Content that appears below the navigation bar -->
+  <div class="content-container">
     <router-outlet></router-outlet>
   </div>
-  
+</div>
