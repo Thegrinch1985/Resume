@@ -1,32 +1,46 @@
 .component-container {
-  width: 600px; /* Fixed width for the cube */
-  height: 500px; /* Fixed height for the cube */
-  margin: 40px auto; /* Center the cube horizontally */
-  padding: 20px; /* Padding inside the cube */
-  border-radius: 20px; /* More rounded corners */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Modern shadow */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6)); /* Gradient background */
-  font-family: 'Poppins', sans-serif; /* Modern font */
-
-  /* Enable 3D perspective for Rubik's Cube effect */
-  perspective: 1200px; /* Adjust perspective to make 3D effect more noticeable */
+  width: 90vw; /* Responsive width */
+  max-width: 800px; /* Prevent it from getting too large */
+  height: 80vh; /* Responsive height */
+  max-height: 600px; /* Prevent excessive height */
+  min-width: 300px; /* Prevent it from getting too small */
+  min-height: 400px; /* Ensure enough space for content */
+  
+  margin: auto; /* Center it */
+  padding: 20px;
+  border-radius: 20px;
+  
+  /* Modern shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Smooth gradient */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6));
+  
+  font-family: 'Poppins', sans-serif;
+  
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Enable 3D perspective */
+  perspective: 1200px;
   position: relative;
 
-  /* Allow overflow content to be scrollable */
-  overflow: auto; /* Automatically adds scrollbars when needed */
-  max-height: 600px; /* Maximum height, allows scrollbar to show when content overflows */
+  /* Allow scrolling for overflow content */
+  overflow: auto;
 
-  /* Subtle hover effect */
+  /* Hover effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   &:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1);
   }
 
-  /* Exciting random animation on load */
+  /* Initial animation */
   animation: randomExcitingEffect 1.5s ease-out forwards;
 
-  /* Keyframes for random animation */
   @keyframes randomExcitingEffect {
     0% {
       transform: scale(0.8) rotateY(0deg);
@@ -64,7 +78,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-300px);
+      transform: translateX(-30vw);
     }
   }
 
@@ -73,7 +87,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(300px);
+      transform: translateX(30vw);
     }
   }
 }

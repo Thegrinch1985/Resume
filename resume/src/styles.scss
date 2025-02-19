@@ -1,19 +1,82 @@
 @import 'shared-styles.scss';
 /* You can add global styles to this file, and also import other style files */
 
-
 body {
-    background-color: black;
-    color: white; /* Optional: Ensures text is visible on black background */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    font-family: Arial, sans-serif; /* Optional: Customize font if needed */
-  }
-  
-  .start-page {
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    height: 100vh; /* Full viewport height */
-  }
-  
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft warm gradient */
+  color: #333; /* Dark grey for readability */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; /* More modern font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Start Page Styling */
+.start-page {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90vw; /* Responsive width */
+  max-width: 600px; /* Prevent it from becoming too wide */
+  padding: 20px;
+
+
+
+  /* Heading Styling */
+  // h1 {
+  //   font-size: 2rem; /* Responsive font size */
+  //   color: #fff;
+  //   margin-bottom: 10px;
+  // }
+
+  /* Button Styling */
+  // .start-button {
+  //   padding: 12px 24px;
+  //   font-size: 1rem;
+  //   font-weight: bold;
+  //   color: white;
+  //   background: #ff758c; /* Nice pinkish-red button */
+  //   border: none;
+  //   border-radius: 10px;
+  //   cursor: pointer;
+  //   transition: all 0.3s ease;
+
+  //   &:hover {
+  //     background: #ff5f6d; /* Darker shade on hover */
+  //     transform: scale(1.05);
+  //   }
+  // }
+}
+
+/* Fade-in Animation */
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//     transform: translateY(-10px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// /* Responsive Design */
+// @media (max-width: 768px) {
+//   .start-page {
+//     width: 95vw;
+//     padding: 15px;
+//   }
+
+//   h1 {
+//     font-size: 1.8rem;
+//   }
+
+//   .start-button {
+//     font-size: 0.9rem;
+//     padding: 10px 20px;
+//   }
+// }

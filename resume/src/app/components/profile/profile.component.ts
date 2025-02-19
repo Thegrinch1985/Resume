@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // Start the typing effect
-    this.startTypingEffect();
+    // this.startTypingEffect();
 
     // Navigate to the resume page after 5 seconds
     setTimeout(() => {
