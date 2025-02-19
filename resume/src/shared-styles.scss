@@ -3,20 +3,21 @@
   height: 500px; /* Fixed height for the cube */
   margin: 40px auto; /* Center the cube horizontally */
   padding: 20px; /* Padding inside the cube */
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 20px; /* More rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1); /* Modern shadow */
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6)); /* Gradient background */
   font-family: 'Poppins', sans-serif; /* Modern font */
-  
+
   /* Enable 3D perspective for Rubik's Cube effect */
   perspective: 1200px; /* Adjust perspective to make 3D effect more noticeable */
   position: relative;
-  
+
   /* Allow overflow content to be scrollable */
   overflow: auto; /* Automatically adds scrollbars when needed */
-  max-height: 600px; /* Maximum height, allows scroll bar to show when content overflows */
-  
+  max-height: 600px; /* Maximum height, allows scrollbar to show when content overflows */
+
   /* Subtle hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   &:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2), 0 6px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow */

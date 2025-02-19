@@ -2,8 +2,28 @@
   <!-- Navigation bar at the top -->
   <app-navigation *ngIf="showNavigation"></app-navigation>
   
+  <!-- Hero Section -->
+  <!-- Create a hero component if it doesn't exist -->
+  <!-- <app-hero *ngIf="showHero"></app-hero> -->
+
   <!-- Content that appears below the navigation bar -->
   <div class="content-container">
     <router-outlet></router-outlet>
   </div>
+
+  <!-- Featured Videos Section -->
+  <!-- If a featured-videos component doesn't exist, create it -->
+  <!-- <app-featured-videos *ngIf="showFeaturedVideos"></app-featured-videos> -->
+
+  <!-- Crafts and Activities Section -->
+  <!-- Create a crafts-activities component if it doesn't exist -->
+  <!-- <app-crafts-activities *ngIf="showCraftsActivities"></app-crafts-activities> -->
+
+  <!-- Shop Section -->
+  <!-- If a shop component is not available, create one -->
+  <!-- <app-shop *ngIf="showShop"></app-shop> -->
+
+  <!-- Footer -->
+  <!-- Create a footer component if missing -->
+  <!-- <app-footer></app-footer> -->
 </div>
