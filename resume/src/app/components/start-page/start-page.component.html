@@ -1,29 +1,20 @@
+<app-loading-screen *ngIf="showLoadingScreen"></app-loading-screen>
 <div class="start-page">
-  <!-- Navigation bar at the top -->
-  <app-navigation *ngIf="showNavigation"></app-navigation>
-  
-  <!-- Hero Section -->
-  <!-- Create a hero component if it doesn't exist -->
-  <!-- <app-hero *ngIf="showHero"></app-hero> -->
+  <!-- Loading Screen -->
 
-  <!-- Content that appears below the navigation bar -->
-  <div class="content-container">
-    <router-outlet></router-outlet>
-  </div>
+  <!-- Main Content (only visible after loading) -->
+  <ng-container *ngIf="!showLoadingScreen">
+    <!-- Navigation bar at the top -->
+    <app-navigation></app-navigation>
 
-  <!-- Featured Videos Section -->
-  <!-- If a featured-videos component doesn't exist, create it -->
-  <!-- <app-featured-videos *ngIf="showFeaturedVideos"></app-featured-videos> -->
 
-  <!-- Crafts and Activities Section -->
-  <!-- Create a crafts-activities component if it doesn't exist -->
-  <!-- <app-crafts-activities *ngIf="showCraftsActivities"></app-crafts-activities> -->
 
-  <!-- Shop Section -->
-  <!-- If a shop component is not available, create one -->
-  <!-- <app-shop *ngIf="showShop"></app-shop> -->
+    <!-- Content that appears below the navigation bar -->
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
 
-  <!-- Footer -->
-  <!-- Create a footer component if missing -->
-  <!-- <app-footer></app-footer> -->
+
+    <!-- <ng-content select="[footer-section]"></ng-content> -->
+  </ng-container>
 </div>

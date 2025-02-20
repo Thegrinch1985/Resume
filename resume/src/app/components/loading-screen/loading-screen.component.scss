@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rock Salt', cursive;
+  background-color: #101010; /* Dark background for a cozy music vibe */
+  color: #ffcb00; /* Warm yellow/orange for the music shop feel */
+  overflow: hidden;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  opacity: 1;
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+.loading-content {
+  text-align: center;
+  color: #ffcb00;
+  font-family: 'Rock Salt', cursive;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffcb00;
+  text-shadow: 0 0 10px #ffcb00, 0 0 15px #ffcb00, 0 0 25px #ffcb00;
+  animation: bounce 1.5s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 15px;
+  color: rgba(255, 203, 0, 0.8);
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.record-vibe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  font-family: 'Rock Salt', cursive;
+  color: rgba(255, 203, 0, 0.4);
+  white-space: nowrap;
+  animation: spinRecord 4s linear infinite;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 203, 0, 0.2);
+  border-top: 4px solid #ffcb00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinRecord {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+  }
+}

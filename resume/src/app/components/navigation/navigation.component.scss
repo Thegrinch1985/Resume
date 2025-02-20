@@ -1,66 +1,71 @@
-/* Main navigation bar */
+/* Main Navigation Bar */
 nav {
-    background-color: #333;
-    padding: 15px 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(135deg, #5a3f5e, #8d5e7c);
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Adds a soft glass effect */
+  position: fixed; /* Stays at the top */
+  width: 90%;
+  max-width: 1100px; /* Keeps it centered */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation List */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px; /* Space between items */
+}
+
+/* Navigation Links */
+nav ul li a {
+  color: #f4e7ff; /* Soft lilac for readability */
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  background: linear-gradient(145deg, #c08497, #6a3d59); /* Soft pinkish-purple gradient */
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(192, 132, 151, 0.5);
+}
+
+/* Active Link */
+nav ul li a.active {
+  background: linear-gradient(145deg, #d1a3ff, #a56cc1); /* Muted pastel purple */
+  font-weight: bold;
+}
+
+/* Mobile-Friendly Styles */
+@media screen and (max-width: 768px) {
+  nav {
+    width: 95%;
+    padding: 12px 20px;
   }
-  
-  /* Unordered list styles */
+
   nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center; /* Center the navigation items */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-  
-  /* Navigation items (list items) */
-  nav ul li {
-    display: inline-block; /* Changed to inline-block for better centering */
-    margin: 0 20px;
-  }
-  
-  /* Anchor link styles */
+
   nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px; /* Slightly larger text */
-    padding: 8px 15px; /* Padding around links */
-    border-radius: 5px; /* Rounded corners for the link */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    display: block;
+    width: 100%;
+    text-align: center;
   }
-  
-  /* Hover effect for links */
-  nav ul li a:hover {
-    background-color: #555; /* Slightly lighter background color on hover */
-    transform: scale(1.1); /* Slightly enlarge the link on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-  }
-  
-  /* Active link styles */
-  nav ul li a.active {
-    font-weight: bold;
-    color: #ffd700; /* Gold color for active link */
-    background-color: #444; /* Darker background when active */
-    padding: 8px 15px; /* Keep padding consistent */
-  }
-  
-  /* Optional: Add some margin on the left and right for better spacing */
-  nav ul li a {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-  
-  /* Mobile-friendly: Stack navigation links on small screens */
-  @media screen and (max-width: 768px) {
-    nav ul {
-      display: flex;
-      flex-direction: column; /* Stack links vertically on smaller screens */
-      align-items: center;
-    }
-  
-    nav ul li {
-      margin-bottom: 10px;
-    }
-  }
-  
+}

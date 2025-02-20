@@ -7,40 +7,39 @@ import { Router, NavigationEnd, Event } from '@angular/router';
   styleUrls: ['./start-page.component.scss']
 })
 export class StartPageComponent implements OnInit {
-  showNavigation = true; // Default to showing the navigation
-  randomEffectClass = ''; // This will hold the random effect class name
+  showLoadingScreen: boolean = true; // Controls loading screen visibility
+  showNavigation: boolean = true; // Default to showing the navigation
+  randomEffectClass: string = ''; // Holds the random effect class name
 
   constructor(private router: Router) {
-    // Subscribe to router events and hide the navigation on the profile page
+    // Subscribe to router events to hide/show navigation and apply cube movement effect
     this.router.events.subscribe((event: Event) => {
-      if (this.isNavigationEnd(event)) { // Check if the event is NavigationEnd
-        if (event.url === '/profile') {
-          this.showNavigation = false; // Hide navigation on the profile page
-        } else {
-          this.showNavigation = true; // Show navigation on other pages
-        }
-
-        // Call randomize effect for cube movement
+      if (event instanceof NavigationEnd) {
+        this.updateNavigationVisibility();
         this.randomizeEffect();
       }
     });
   }
 
   ngOnInit(): void {
-    // Initial random effect when the component is loaded
-    this.randomizeEffect();
+    // Show loading screen for 3 seconds before revealing the page
+    setTimeout(() => {
+      this.showLoadingScreen = false;
+    }, 3000);
+
+    // Initial check to set navigation visibility
+    this.updateNavigationVisibility();
   }
 
-  // Type guard function to check if the event is of type NavigationEnd
-  isNavigationEnd(event: Event): event is NavigationEnd {
-    return event instanceof NavigationEnd;
+  // Method to update the visibility of the navigation bar
+  updateNavigationVisibility(): void {
+    const currentUrl = this.router.url;
+    this.showNavigation = currentUrl !== '/profile'; // Hide navigation on the profile page
   }
 
   // Randomize effect for cube movement on each route change
   randomizeEffect() {
-    // Generate a random direction for cube movement
     const direction = Math.random() > 0.5 ? 'left' : 'right'; // 50% chance to go left or right
-
-    this.randomEffectClass = direction === 'left' ? 'move-left' : 'move-right'; // Assign the class based on direction
+    this.randomEffectClass = direction === 'left' ? 'move-left' : 'move-right';
   }
 }

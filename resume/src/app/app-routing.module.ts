@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutMeComponent },
   { path: 'skills', component: SkillsTechStackComponent },
   { path: 'work', component: WorkExperienceComponent },
-  { path: '', redirectTo: '/profile', pathMatch: 'full' }, // Default to start page
+  { path: '', redirectTo: '/about', pathMatch: 'full' }, // Default to start page
 ];
 
 

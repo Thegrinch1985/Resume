@@ -11,6 +11,7 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SkillsTechStackComponent } from './components/skills-tech-stack/skills-tech-stack.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AboutMeComponent,
     SkillsTechStackComponent,
     WorkExperienceComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,
