@@ -3,18 +3,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Color Variables
-$light-gray: #D5D6DB;      // Soft, neutral gray
-$dark-charcoal: #252429;   // Deep, almost black gray
-$muted-plum: #3B3235;      // Dark, desaturated purple-brown
-$cool-silver: #ACB0B9;     // Light steel gray
-$slate-gray: #82868C;  
-$slate-white: #e6ebf2;  
+// var(--light-gray): #D5D6DB;      // Soft, neutral gray
+// var(--dark-charcoal): #252429;   // Deep, almost black gray
+// var(--muted-plum): #3B3235;      // Dark, desaturated purple-brown
+// var(--cool-silver): #ACB0B9;     // Light steel gray
+// var(--slate-gray): #82868C;  
+// var(--slate-white): #e6ebf2;  
 
+:root {
+  --light-gray: #D5D6DB;
+  --dark-charcoal: #252429;
+  --muted-plum: #3B3235;
+  --cool-silver: #ACB0B9;
+  --slate-gray: #82868C;
+  --slate-white: #e6ebf2;
+}
+
+/* Dark Mode Colors */
+[data-theme='dark'] {
+  --light-gray: #3e3e3e;
+  --dark-charcoal: #e6ebf2;
+  --muted-plum: #b0a0b0;
+  --cool-silver: #767676;
+  --slate-gray: #5e6267;
+  --slate-white: #252429;
+}
 
 
 
 body {
-  background: linear-gradient(135deg, $light-gray, $light-gray);
+  background: linear-gradient(135deg, var(--light-gray), var(--light-gray));
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif; 
@@ -23,6 +41,48 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+/* Generic Button Styles */
+.button {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+  color: var(--dark-charcoal);
+  border: none;
+  border-radius: 25px; /* Rounded for a modern look */
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px); /* Soft glassmorphism */
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+}
+
+/* Hover Effect */
+.button:hover {
+  background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px); /* Subtle lift */
+}
+
+/* Active (Click) Effect */
+.button:active {
+  transform: translateY(1px); /* Slight sink effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus Effect */
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
+}
+
+
 
 /* Start Page Styling */
 .start-page {
@@ -49,10 +109,10 @@ body {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
   
   /* Glassmorphic effect */
-  background: $light-gray;
+  background: var(--light-gray);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.2);
+  border: 1px solid rgba(37, 36, 41, 0.2);
 
 
   font-family: 'Poppins', sans-serif;
@@ -67,14 +127,14 @@ body {
 
   /* Custom scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3) transparent;
+  scrollbar-color: rgba(37, 36, 41, 0.3) transparent;
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3);
+    background: rgba(37, 36, 41, 0.3) transparent;
     border-radius: 10px;
   }
 
@@ -87,7 +147,7 @@ body {
   
   &:hover {
     // transform: scale(1.04);
-    box-shadow: 0 14px 28px rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3), 0 8px 16px rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3);
+    box-shadow: 0 14px 28px rgba(37, 36, 41, 0.3) transparent;
   }
 
   /* Entrance animation */
@@ -131,5 +191,25 @@ body {
     }
   }
 }
+
+/* Minimized Profile Picture */
+.profile-minimized {
+  position: absolute;
+  top: 15px; /* Adjusted for tighter layout */
+  left: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 60px; /* Slightly smaller size */
+  height: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-minimized img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #fff; /* Slightly thinner border */
+}
+
 
 

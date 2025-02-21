@@ -2,8 +2,8 @@
 @import 'src/styles.scss';
 
 .work-experience-container {
-  background: $slate-white; 
-  color: $dark-charcoal;
+  background: var(--slate-white); 
+  color: var(--dark-charcoal);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
@@ -33,7 +33,7 @@
   margin-bottom: 15px;
   border: 1px solid rgba(240, 240, 240, 0.5); /* Lighter border */
   border-radius: 8px;
-  background: $slate-white; 
+  background: var(--slate-white); 
   overflow: hidden; /* Prevent overflow issues */
   transition: transform 0.3s ease, background 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -46,13 +46,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, $light-gray, $slate-gray);
+  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   border-radius: 8px;
   transition: background 0.3s ease-in-out;
 }
 
 .accordion-header:hover {
-  background: linear-gradient(135deg, $slate-gray,$light-gray);
+  background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
 }
 
 .accordion-header h2 {

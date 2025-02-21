@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, $light-gray, $light-gray);
+  background: linear-gradient(135deg, var(--light-gray), var(--light-gray));
   color: #c2a875; /* Aged gold instead of bright yellow */
   overflow: hidden;
   text-align: center;
@@ -23,7 +23,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, $light-gray, $light-gray);
+  background: linear-gradient(135deg, var(--light-gray), var(--light-gray));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ body {
   height: 60px;
   border-radius: 50%;
   border: 4px solid rgba(194, 168, 117, 0.15);
-  border-top: 4px solid $dark-charcoal;
+  border-top: 4px solid var(--dark-charcoal);
   background: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Vinyl_record.svg') no-repeat center/cover;
   filter: brightness(0.8) contrast(1.1); /* Slightly faded look */
   animation: spin 2s linear infinite;
@@ -77,7 +77,7 @@ body {
   transform: translateX(-50%);
   font-size: 22px;
   font-family: 'Rock Salt', cursive;
-  color: $dark-charcoal;
+  color: var(--dark-charcoal);
   white-space: nowrap;
   overflow: hidden;
   width: 100%;

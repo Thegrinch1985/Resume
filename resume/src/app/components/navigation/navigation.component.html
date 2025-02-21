@@ -1,4 +1,5 @@
 <nav>
+  
     <ul>
       <!-- Link to About Me, only show on routes that aren't /profile -->
       <li><a routerLink="/about" routerLinkActive="active">About Me</a></li>
@@ -13,5 +14,7 @@
       <li><a routerLink="/resume" routerLinkActive="active">Resume</a></li>
   
     </ul>
+
+      <!-- Button to toggle dark mode -->
+      <button class="download-btn"  (click)="toggleDarkMode()">{{buttonText}}</button>
   </nav>
-  

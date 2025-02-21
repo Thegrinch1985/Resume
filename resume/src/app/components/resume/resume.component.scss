@@ -3,8 +3,8 @@
 
 
 .resume-container {
-  background: $slate-white; 
-  color: $dark-charcoal;
+  background: var(--slate-white); 
+  color: var(--dark-charcoal);
   padding: 15px; /* Reduced padding for compactness */
   max-width: 700px; /* Slightly smaller width */
   margin: 20px auto; /* Reduced vertical spacing */
@@ -16,24 +16,6 @@
   overflow: scroll; /* Prevents overflow */
 }
 
-/* Minimized Profile Picture */
-.profile-minimized {
-  position: absolute;
-  top: 15px; /* Adjusted for tighter layout */
-  left: 15px;
-  border-radius: 50%;
-  overflow: hidden;
-  width: 60px; /* Slightly smaller size */
-  height: 60px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.profile-minimized img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 2px solid #fff; /* Slightly thinner border */
-}
 
 /* Header */
 .resume-header {
@@ -137,44 +119,7 @@
     font-size: 14px;
   }
 }
-.download-btn {
-  display: inline-block;
-  margin: 20px auto;
-  padding: 12px 25px;
-  background: linear-gradient(135deg, $light-gray, $slate-gray);
-  color: $dark-charcoal;
-  border: none;
-  border-radius: 25px; /* Rounded for a modern look */
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px); /* Soft glassmorphism */
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
-}
 
-/* Hover Effect */
-.download-btn:hover {
-  background: linear-gradient(135deg, $slate-gray,$light-gray);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px); /* Subtle lift */
-}
-
-/* Active (Click) Effect */
-.download-btn:active {
-  transform: translateY(1px); /* Slight sink effect */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Focus Effect */
-.download-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
-}
 
 /* Responsive Tweaks */
 @media screen and (max-width: 768px) {
