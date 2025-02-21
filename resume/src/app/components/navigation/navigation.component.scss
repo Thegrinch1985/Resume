@@ -1,6 +1,14 @@
 /* Main Navigation Bar */
+
+// 🎨 Light Gray	#$light-gray	Soft, neutral gray
+// 🎨 Dark Charcoal	#252429	Deep, almost black gray
+// 🎨 Muted Plum	#3B3235	Dark, desaturated purple-brown
+// 🎨 Cool Silver	#ACB0B9	Light steel gray
+// 🎨 Slate Gray	#82868C	Medium gray with blue undertones
+
+@import 'src/styles.scss'; 
 nav {
-  background: linear-gradient(135deg, #5a3f5e, #8d5e7c);
+  background: linear-gradient(135deg, $muted-plum, $muted-plum);
   padding: 15px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
@@ -27,26 +35,25 @@ nav ul {
 
 /* Navigation Links */
 nav ul li a {
-  color: #f4e7ff; /* Soft lilac for readability */
+  color: $light-gray; /* Soft lilac for readability */
   text-decoration: none;
   font-size: 18px;
   padding: 10px 18px;
   border-radius: 8px;
   font-weight: 500;
-  transition: all 0.3s ease-in-out;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
 }
 
 /* Hover Effect */
 nav ul li a:hover {
-  background: linear-gradient(145deg, #c08497, #6a3d59); /* Soft pinkish-purple gradient */
+  background: linear-gradient(135deg, $slate-gray,$light-gray);
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(192, 132, 151, 0.5);
 }
 
 /* Active Link */
 nav ul li a.active {
-  background: linear-gradient(145deg, #d1a3ff, #a56cc1); /* Muted pastel purple */
+  background: linear-gradient(135deg, $light-gray, $slate-gray);
   font-weight: bold;
 }
 

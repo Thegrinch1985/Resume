@@ -1,6 +1,13 @@
+// 🎨 Light Gray	#D5D6DB	Soft, neutral gray
+// 🎨 Dark Charcoal	#252429	Deep, almost black gray
+// 🎨 Muted Plum	#3B3235	Dark, desaturated purple-brown
+// 🎨 Cool Silver	#ACB0B9	Light steel gray
+// 🎨 Slate Gray	#82868C	Medium gray with blue undertones
+@import 'src/styles.scss';
+
 .about-me-container {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 0.9), rgba(255, 182, 193, 0.8)); /* Transparent gradient */
-  color: #333;
+  background: $slate-white; 
+  color: $dark-charcoal;
   padding: 15px; /* Slightly smaller spacing */
   border-radius: 12px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -47,7 +54,7 @@
 .about-me-container ul li {
   font-size: 16px; /* Consistent with skills list */
   margin: 0; /* Removes margin (handled by gap) */
-  background: linear-gradient(135deg, rgba(255, 182, 193, 0.8), rgba(135, 206, 235, 0.8)); /* Soft gradient */
+  background: linear-gradient(135deg, $light-gray, $slate-gray);
   padding: 8px 12px; /* Compact padding for balance */
   border-radius: 10px; /* Rounded corners for consistency */
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle text depth */
@@ -58,7 +65,7 @@
 
 /* Hover Effects */
 .about-me-container ul li:hover {
-  background: linear-gradient(135deg, rgba(135, 206, 235, 1), rgba(255, 182, 193, 1)); /* More vibrant gradient */
+  background: linear-gradient(135deg, $slate-gray,$light-gray);
   // transform: scale(1.05); /* Subtle hover scaling */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }

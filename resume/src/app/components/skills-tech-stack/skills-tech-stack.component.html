@@ -1,16 +1,50 @@
 <div class="component-container">
-
-<div class="skills-container">
+  <div class="skills-container">
     <h1>Skills & Tech Stack</h1>
-  
+
     <h2>Skills</h2>
     <ul>
       <li *ngFor="let skill of skills">{{ skill }}</li>
     </ul>
-  
+
     <h2>Tools</h2>
     <ul>
       <li *ngFor="let tool of tools">{{ tool }}</li>
+    </ul>
+
+    <h2>Frameworks</h2>
+    <ul>
+      <li *ngFor="let framework of frameworks">{{ framework }}</li>
+    </ul>
+
+    <h2>Databases</h2>
+    <ul>
+      <li *ngFor="let database of databases">{{ database }}</li>
+    </ul>
+
+    <h2>Version Control</h2>
+    <ul>
+      <li *ngFor="let versionControl of versionControl">{{ versionControl }}</li>
+    </ul>
+
+    <h2>Cloud Services</h2>
+    <ul>
+      <li *ngFor="let cloudService of cloudServices">{{ cloudService }}</li>
+    </ul>
+
+    <h2>Testing</h2>
+    <ul>
+      <li *ngFor="let testingTool of testingTools">{{ testingTool }}</li>
+    </ul>
+
+    <h2>DevOps</h2>
+    <ul>
+      <li *ngFor="let devopsTool of devopsTools">{{ devopsTool }}</li>
+    </ul>
+
+    <h2>Soft Skills</h2>
+    <ul>
+      <li *ngFor="let softSkill of softSkills">{{ softSkill }}</li>
     </ul>
   </div>
 </div>

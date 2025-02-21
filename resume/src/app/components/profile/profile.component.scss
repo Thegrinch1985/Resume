@@ -1,7 +1,8 @@
+@import 'src/styles.scss';
 .profile-container {
   width: 300px; /* Circular size */
   height: 300px; /* Perfect circle */
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.6));
+  background: $slate-white; 
   border-radius: 50%; /* Makes it a perfect circle */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
   padding: 25px;

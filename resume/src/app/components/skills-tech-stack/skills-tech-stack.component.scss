@@ -1,7 +1,9 @@
+@import 'src/styles.scss';
 /* Skills Container */
+
 .skills-container {
-  background: linear-gradient(135deg, rgba(175, 238, 238, 0.9), rgba(255, 192, 203, 0.8)); /* Soft gradient */
-  color: #333;
+  background: $slate-white; 
+  color: $dark-charcoal;
   padding: 15px; /* Reduced padding for compactness */
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
@@ -9,7 +11,7 @@
   max-width: 700px;
   margin: 20px auto; /* Reduced vertical margin */
   text-align: center;
-  overflow: hidden; /* Prevent content overflow */
+  overflow: scroll; /* Prevent content overflow */
 }
 
 /* Header Titles */
@@ -43,7 +45,7 @@
 .skills-container ul li {
   font-size: 16px; /* Slightly smaller text size */
   margin: 0; /* Removed margin (handled by gap) */
-  background: linear-gradient(135deg, rgba(255, 192, 203, 0.8), rgba(175, 238, 238, 0.9)); /* Soft gradient background */
+  background: linear-gradient(135deg, $light-gray, $slate-gray);
   padding: 8px 12px; /* Reduced padding for compactness */
   border-radius: 10px; /* Rounded corners */
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle text depth */
@@ -54,7 +56,7 @@
 
 /* Hover Effects */
 .skills-container ul li:hover {
-  background: linear-gradient(135deg, rgba(175, 238, 238, 1), rgba(255, 192, 203, 1)); /* Brighter gradient on hover */
+  background: linear-gradient(135deg, $slate-gray,$light-gray);
   // transform: scale(1.05); /* Subtle scaling */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }

@@ -1,15 +1,15 @@
 /* Container */
+@import 'src/styles.scss';
+
 .work-experience-container {
-  background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(224, 255, 255, 0.8)); /* Soft pastel gradient */
-  color: #333;
+  background: $slate-white; 
+  color: $dark-charcoal;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
   font-family: 'Poppins', sans-serif; /* Clean modern font */
-  max-width: 700px;
-  margin: 30px auto; /* Adjusted margin for compactness */
   text-align: center;
-  overflow: hidden;
+  overflow: scroll; /* Prevents overflow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
 }
 
@@ -33,7 +33,7 @@
   margin-bottom: 15px;
   border: 1px solid rgba(240, 240, 240, 0.5); /* Lighter border */
   border-radius: 8px;
-  background: linear-gradient(135deg, rgba(240, 248, 255, 0.95), rgba(224, 255, 255, 0.85)); /* Subtle pastel gradient */
+  background: $slate-white; 
   overflow: hidden; /* Prevent overflow issues */
   transition: transform 0.3s ease, background 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -46,13 +46,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(235, 245, 255, 0.9); /* Light pastel blue */
+  background: linear-gradient(135deg, $light-gray, $slate-gray);
   border-radius: 8px;
   transition: background 0.3s ease-in-out;
 }
 
 .accordion-header:hover {
-  background: rgba(220, 240, 255, 1); /* Brighter pastel on hover */
+  background: linear-gradient(135deg, $slate-gray,$light-gray);
 }
 
 .accordion-header h2 {

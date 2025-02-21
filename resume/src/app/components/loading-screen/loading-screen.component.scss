@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-
+@import 'src/styles.scss';
 *,
 *::before,
 *::after {
@@ -9,19 +9,21 @@
 }
 
 body {
-  font-family: 'Rock Salt', cursive;
-  background-color: #101010; /* Dark background for a cozy music vibe */
-  color: #ffcb00; /* Warm yellow/orange for the music shop feel */
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, $light-gray, $light-gray);
+  color: #c2a875; /* Aged gold instead of bright yellow */
   overflow: hidden;
+  text-align: center;
 }
 
+/* --- Loading Screen --- */
 .loading-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #101010;
+  background: linear-gradient(135deg, $light-gray, $light-gray);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,55 +34,57 @@ body {
   animation-delay: 3s;
 }
 
-.loading-content {
-  text-align: center;
-  color: #ffcb00;
-  font-family: 'Rock Salt', cursive;
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in-out forwards;
-}
-
+/* --- Logo Styling --- */
 .logo {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  color: #ffcb00;
-  text-shadow: 0 0 10px #ffcb00, 0 0 15px #ffcb00, 0 0 25px #ffcb00;
-  animation: bounce 1.5s ease-in-out infinite alternate;
+  letter-spacing: 4px;
+  color: #3B3235;
+  text-shadow: 0 0 5px rgba(194, 168, 117, 0.4), 
+               0 0 10px rgba(194, 168, 117, 0.2);
+  animation: subtleBounce 2s ease-in-out infinite alternate;
+  text-align: center;
 }
 
+/* --- Subtitle --- */
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-top: 15px;
-  color: rgba(255, 203, 0, 0.8);
+  color: #3B3235;
   opacity: 0;
   animation: fadeIn 2s ease-in-out forwards;
 }
 
-.record-vibe {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 30px;
-  font-family: 'Rock Salt', cursive;
-  color: rgba(255, 203, 0, 0.4);
-  white-space: nowrap;
-  animation: spinRecord 4s linear infinite;
-}
-
+/* --- Vinyl Record Spinner (Subtle) --- */
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(255, 203, 0, 0.2);
-  border-top: 4px solid #ffcb00;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border: 4px solid rgba(194, 168, 117, 0.15);
+  border-top: 4px solid $dark-charcoal;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Vinyl_record.svg') no-repeat center/cover;
+  filter: brightness(0.8) contrast(1.1); /* Slightly faded look */
+  animation: spin 2s linear infinite;
   margin-top: 20px;
 }
 
-/* Animations */
+/* --- "Now Playing" Scrolling Text (Muted) --- */
+.record-vibe {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-family: 'Rock Salt', cursive;
+  color: $dark-charcoal;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: scrollText 12s linear infinite;
+}
+
+/* --- Animations --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -102,24 +106,15 @@ body {
   }
 }
 
-@keyframes bounce {
+@keyframes subtleBounce {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@keyframes spinRecord {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -132,7 +127,16 @@ body {
   }
 }
 
-/* Mobile Responsiveness */
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
   .logo {
     font-size: 2.5rem;
@@ -143,8 +147,8 @@ body {
   }
 
   .spinner {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -159,7 +163,7 @@ body {
   }
 
   .spinner {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }

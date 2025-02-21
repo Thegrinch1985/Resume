@@ -1,12 +1,23 @@
-@import 'shared-styles.scss';
+
+
 /* You can add global styles to this file, and also import other style files */
 
+// Color Variables
+$light-gray: #D5D6DB;      // Soft, neutral gray
+$dark-charcoal: #252429;   // Deep, almost black gray
+$muted-plum: #3B3235;      // Dark, desaturated purple-brown
+$cool-silver: #ACB0B9;     // Light steel gray
+$slate-gray: #82868C;  
+$slate-white: #e6ebf2;  
+
+
+
+
 body {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft warm gradient */
-  color: #333; /* Dark grey for readability */
+  background: linear-gradient(135deg, $light-gray, $light-gray);
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif; /* More modern font */
+  font-family: 'Poppins', sans-serif; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,60 +34,102 @@ body {
   width: 90vw; /* Responsive width */
   max-width: 600px; /* Prevent it from becoming too wide */
   padding: 20px;
-
-
-
-  /* Heading Styling */
-  // h1 {
-  //   font-size: 2rem; /* Responsive font size */
-  //   color: #fff;
-  //   margin-bottom: 10px;
-  // }
-
-  /* Button Styling */
-  // .start-button {
-  //   padding: 12px 24px;
-  //   font-size: 1rem;
-  //   font-weight: bold;
-  //   color: white;
-  //   background: #ff758c; /* Nice pinkish-red button */
-  //   border: none;
-  //   border-radius: 10px;
-  //   cursor: pointer;
-  //   transition: all 0.3s ease;
-
-  //   &:hover {
-  //     background: #ff5f6d; /* Darker shade on hover */
-  //     transform: scale(1.05);
-  //   }
-  // }
 }
 
-/* Fade-in Animation */
-// @keyframes fadeIn {
-//   from {
-//     opacity: 0;
-//     transform: translateY(-10px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
+.component-container {
+  width: min(90vw, 1100px);
+  height: min(80vh, 600px);
+  min-width: 320px;
+  min-height: 400px;
+  margin: auto;
+  padding: 24px;
+  border-radius: 24px;
+  
+  /* Modern shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Glassmorphic effect */
+  background: $light-gray;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.2);
 
-// /* Responsive Design */
-// @media (max-width: 768px) {
-//   .start-page {
-//     width: 95vw;
-//     padding: 15px;
-//   }
 
-//   h1 {
-//     font-size: 1.8rem;
-//   }
+  font-family: 'Poppins', sans-serif;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-//   .start-button {
-//     font-size: 0.9rem;
-//     padding: 10px 20px;
-//   }
-// }
+  /* Allow scrolling for overflow content */
+  overflow: auto;
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    // transform: scale(1.04);
+    box-shadow: 0 14px 28px rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3), 0 8px 16px rgba(red($dark-charcoal), green($dark-charcoal), blue($dark-charcoal), 0.3);
+  }
+
+  /* Entrance animation */
+  animation: fadeInUp 1.2s ease-out;
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(20px) scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Dynamic movement animations */
+  &.move-left {
+    animation: moveLeft 0.8s ease-out forwards;
+  }
+
+  &.move-right {
+    animation: moveRight 0.8s ease-out forwards;
+  }
+
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-25vw);
+    }
+  }
+
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(25vw);
+    }
+  }
+}
+
+

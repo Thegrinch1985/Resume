@@ -1,7 +1,10 @@
 /* Overall Container */
+@import 'src/styles.scss';
+
+
 .resume-container {
-  background: linear-gradient(135deg, rgba(175, 238, 238, 0.9), rgba(255, 192, 203, 0.8)); /* Transparent gradient */
-  color: #333;
+  background: $slate-white; 
+  color: $dark-charcoal;
   padding: 15px; /* Reduced padding for compactness */
   max-width: 700px; /* Slightly smaller width */
   margin: 20px auto; /* Reduced vertical spacing */
@@ -73,7 +76,7 @@
 .resume-section ul li {
   margin-bottom: 8px; /* Tightened spacing */
   font-size: 16px; /* Smaller, consistent font */
-  background: rgba(255, 255, 255, 0.7); /* Subtle background */
+  background: rgba(240, 248, 255, 0.95); /* Slightly deeper pastel blue */
   padding: 8px; /* Reduced padding */
   border-radius: 8px;
   display: inline-block;
@@ -82,7 +85,7 @@
 }
 
 .resume-section ul li:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(240, 248, 255, 0.95); /* Slightly deeper pastel blue */
   // transform: scale(1.05); /* Subtle scaling effect */
 }
 
@@ -138,8 +141,8 @@
   display: inline-block;
   margin: 20px auto;
   padding: 12px 25px;
-  background: linear-gradient(135deg, #7a5576, #a978a3); /* Muted purple gradient */
-  color: #f4e7ff; /* Soft lilac text */
+  background: linear-gradient(135deg, $light-gray, $slate-gray);
+  color: $dark-charcoal;
   border: none;
   border-radius: 25px; /* Rounded for a modern look */
   font-size: 18px;
@@ -156,7 +159,7 @@
 
 /* Hover Effect */
 .download-btn:hover {
-  background: linear-gradient(135deg, #a978a3, #7a5576); /* Reverse gradient */
+  background: linear-gradient(135deg, $slate-gray,$light-gray);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px); /* Subtle lift */
 }
