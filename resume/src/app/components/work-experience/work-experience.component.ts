@@ -4,7 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-work-experience',
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss'],
-  encapsulation: ViewEncapsulation.None // Shared styles will now apply
 })
 export class WorkExperienceComponent {
   experiences = [
@@ -20,7 +19,7 @@ export class WorkExperienceComponent {
         'Proficient in Cloud computing services, with a specialisation in Microsoft Azure for application management, optimisation, and deployment.',
         'Strong communicator adept at steering team collaboration toward meeting business objectives and driving successful project outcomes.'
       ],
-      expanded: false
+      expanded: true
     },
     {
       company: 'BEARING POINT',
