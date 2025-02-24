@@ -11,23 +11,27 @@
 // var(--slate-white): #e6ebf2;  
 
 :root {
-  --light-gray: #D5D6DB;
-  --dark-charcoal: #252429;
-  --muted-plum: #3B3235;
-  --cool-silver: #ACB0B9;
-  --slate-gray: #82868C;
-  --slate-white: #e6ebf2;
+  --light-gray: #FDF6EC;   /* Soft Beige, like autumn morning light */
+  --dark-charcoal: #3A2C21; /* Deep Brown, inspired by tree bark */
+  --muted-plum: #B35C44;    /* Warm Rust, like fall leaves */
+  --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
+  --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
+  --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
 }
 
-/* Dark Mode Colors */
+
+
 [data-theme='dark'] {
-  --light-gray: #3e3e3e;
-  --dark-charcoal: #e6ebf2;
-  --muted-plum: #b0a0b0;
-  --cool-silver: #767676;
-  --slate-gray: #5e6267;
-  --slate-white: #252429;
+  --light-gray: #221A14;   /* Rich Espresso, like autumn evenings */
+  --dark-charcoal: #F5E9DD; /* Soft Golden Beige, warm light text */
+  --muted-plum: #D97B58;    /* Burnt Orange, for a fiery autumn feel */
+  --cool-silver: #6A4F43;   /* Deep Walnut, balancing richness */
+  --slate-gray: #A77C65;    /* Soft Cinnamon, cozy warmth */
+  --slate-white: #16110D;   /* Deep Brown-Black, grounding everything */
 }
+
+
+
 
 
 
@@ -41,6 +45,28 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+h1 {
+  font-size: 28px; /* Slightly smaller for balance */
+  margin-bottom: 10px; /* Reduce vertical gap */
+  color: var(--dark-charcoal);
+  // text-shadow: 1px 1px 3px var(--dark-charcoal);
+}
+
+h2  {
+  font-size: 22px; /* Slightly smaller for balance */
+  margin-bottom: 10px; /* Reduce vertical gap */
+  color: var(--dark-charcoal);
+  // text-shadow: 1px 1px 3px var(--dark-charcoal);
+}
+
+h3 {
+  font-size: 20px; /* Slightly smaller for balance */
+  margin-bottom: 10px; /* Reduce vertical gap */
+  color: var(--dark-charcoal);
+  // text-shadow: 1px 1px 3px var(--dark-charcoal);
+}
+
 
 /* Generic Button Styles */
 .button {

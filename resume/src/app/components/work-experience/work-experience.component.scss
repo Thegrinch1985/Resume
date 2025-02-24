@@ -20,13 +20,13 @@
 }
 
 /* Title */
-.work-experience-container h1 {
-  font-size: 28px; /* Slightly smaller for balance */
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #444;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Soft glow */
-}
+// .work-experience-container h1 {
+//   font-size: 28px; /* Slightly smaller for balance */
+//   margin-bottom: 15px;
+//   font-weight: bold;
+//   color: #444;
+//   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Soft glow */
+// }
 
 /* Accordion Container */
 .accordion {
@@ -55,17 +55,17 @@
   background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
 }
 
-.accordion-header h2 {
-  font-size: 18px; /* Adjusted for compact design */
-  margin: 0;
-  font-weight: 500;
-  color: #333;
-}
+// .accordion-header h2 {
+//   font-size: 18px; /* Adjusted for compact design */
+//   margin: 0;
+//   font-weight: 500;
+//   color: #333;
+// }
 
 .accordion-header p {
   font-size: 14px;
   margin: 0;
-  color: #555; /* Subtle secondary text color */
+  color: var(--dark-charcoal); /* Subtle secondary text color */
 }
 
 /* Icon/Arrow in Header */
@@ -83,8 +83,7 @@
 .accordion-body {
   padding: 12px 15px; /* Reduced padding for compactness */
   text-align: left;
-  background: rgba(240, 248, 255, 0.95); /* Slightly deeper pastel blue */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+
 }
 
 .accordion-body ul {
@@ -96,7 +95,7 @@
 .accordion-body ul li {
   font-size: 16px;
   margin-bottom: 8px;
-  color: #444;
+  color: var(--dark-charcoal);
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle text depth */
   transition: color 0.3s ease, transform 0.3s ease; /* Interactive hover effects */
 }
