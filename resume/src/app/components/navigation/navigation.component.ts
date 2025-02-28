@@ -13,8 +13,10 @@ export class NavigationComponent implements OnInit {
   constructor(private themeService: ThemeService, private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.isLightMode = this.themeService.getSystemTheme() === 'light';
-    this.applyTheme();
+    // Ensure the theme is applied right after checking the system theme
+    const systemTheme = this.themeService.getSystemTheme();
+    this.isLightMode = systemTheme === 'light';  // Determine if it's light mode or dark mode based on system theme
+    this.applyTheme();  // Immediately apply the theme based on the system theme
   }
 
   toggleMenu() {
@@ -36,17 +38,17 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleDarkMode() {
-    this.isLightMode = !this.isLightMode;
-    this.themeService.setDarkMode(!this.isLightMode);
-    this.applyTheme();
+    this.isLightMode = !this.isLightMode;  // Toggle the mode
+    this.themeService.setDarkMode(!this.isLightMode);  // Update the theme in the service
+    this.applyTheme();  // Apply the theme based on the new state
   }
 
   applyTheme() {
     const theme = this.isLightMode ? 'light-theme' : 'dark-theme';
-    this.renderer.setAttribute(document.body, 'class', theme);
+    this.renderer.setAttribute(document.body, 'class', theme);  // Apply the theme to the body
   }
 
   get buttonText(): string {
-    return this.isLightMode ? '🌙' : '🌞';
+    return this.isLightMode ? '🌙' : '🌞';  // Update the button text based on the mode
   }
 }
