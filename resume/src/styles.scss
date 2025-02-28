@@ -17,6 +17,7 @@
   --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
   --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
   --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
+  --font-family: 'Inter', sans-serif;
 }
 
 
@@ -39,7 +40,7 @@ body {
   background: linear-gradient(135deg, var(--light-gray), var(--light-gray));
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif; 
+  font-family: var(--font-family); /* Apply the global font here */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,8 +141,7 @@ h3 {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(37, 36, 41, 0.2);
 
-
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family); /* Apply the global font here */
   
   display: flex;
   flex-direction: column;

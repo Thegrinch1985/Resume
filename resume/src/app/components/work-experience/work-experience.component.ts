@@ -19,7 +19,7 @@ export class WorkExperienceComponent {
         'Proficient in Cloud computing services, with a specialisation in Microsoft Azure for application management, optimisation, and deployment.',
         'Strong communicator adept at steering team collaboration toward meeting business objectives and driving successful project outcomes.'
       ],
-      expanded: true
+      expanded: false
     },
     {
       company: 'BEARING POINT',

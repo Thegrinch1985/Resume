@@ -7,7 +7,7 @@
   padding: 15px; /* Reduced padding for compactness */
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  font-family: 'Poppins', sans-serif; /* Clean modern font */
+  font-family: var(--font-family); /* Apply the global font here */
   margin: 20px auto; /* Reduced vertical margin */
   text-align: center;
   overflow: scroll; /* Prevent content overflow */

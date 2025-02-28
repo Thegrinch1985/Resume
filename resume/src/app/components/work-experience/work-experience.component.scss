@@ -7,7 +7,7 @@
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  font-family: 'Poppins', sans-serif; /* Clean modern font */
+  font-family: var(--font-family); /* Apply the global font here */
   text-align: center;
   overflow: scroll; /* Prevents overflow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
@@ -15,18 +15,16 @@
 
 /* Hover effect for container */
 .work-experience-container:hover {
-  // transform: scale(1.02); /* Slight scaling */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
 
 /* Title */
-// .work-experience-container h1 {
-//   font-size: 28px; /* Slightly smaller for balance */
-//   margin-bottom: 15px;
-//   font-weight: bold;
-//   color: #444;
-//   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Soft glow */
-// }
+.work-experience-container h1 {
+  font-size: 30px; /* Slightly bigger for visibility */
+  font-weight: 600;
+  color: var(--dark-charcoal);
+  margin-bottom: 20px;
+}
 
 /* Accordion Container */
 .accordion {
@@ -41,7 +39,7 @@
 
 /* Accordion Header */
 .accordion-header {
-  padding: 12px 15px;
+  padding: 15px 20px; /* Add padding for balance */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -51,28 +49,31 @@
   transition: background 0.3s ease-in-out;
 }
 
+/* Hover effect on accordion header */
 .accordion-header:hover {
-  background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
+  background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
 }
 
-// .accordion-header h2 {
-//   font-size: 18px; /* Adjusted for compact design */
-//   margin: 0;
-//   font-weight: 500;
-//   color: #333;
-// }
+/* Company name (h2) in accordion header */
+.accordion-header h2 {
+  font-size: 20px; /* Slightly larger for the company name */
+  font-weight: 700; /* Bold for emphasis */
+  color: var(--dark-charcoal);
+  margin: 0;
+}
 
+/* Role and duration (p) in accordion header */
 .accordion-header p {
   font-size: 14px;
+  color: var(--dark-charcoal); /* Lighter for contrast */
   margin: 0;
-  color: var(--dark-charcoal); /* Subtle secondary text color */
 }
 
 /* Icon/Arrow in Header */
 .accordion-header span {
   font-size: 18px;
   transition: transform 0.3s ease-in-out;
-  color: var(--dark-charcoal)
+  color: var(--dark-charcoal);
 }
 
 .accordion-header span.expanded {
@@ -81,9 +82,8 @@
 
 /* Accordion Body */
 .accordion-body {
-  padding: 12px 15px; /* Reduced padding for compactness */
+  padding: 12px 20px; /* Adjust padding for consistency */
   text-align: left;
-
 }
 
 .accordion-body ul {

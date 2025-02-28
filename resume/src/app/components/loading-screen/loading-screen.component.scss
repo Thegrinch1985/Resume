@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family); /* Apply the global font here */
   background: var(--light-gray);
   color: var(--cool-silver); /* Aged gold instead of bright yellow */
   overflow: hidden;
@@ -75,7 +75,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 22px;
-  font-family: 'Rock Salt', cursive;
+  font-family: var(--font-family); /* Apply the global font here */
   color: var(--dark-charcoal);
   white-space: nowrap;
   overflow: hidden;
