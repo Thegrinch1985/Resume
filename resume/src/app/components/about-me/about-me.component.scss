@@ -8,10 +8,16 @@
 .about-me-container {
   background: var(--slate-white); 
   color: var(--dark-charcoal);
-  padding: 15px; /* Slightly smaller spacing */
-  border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  padding: 15px; /* Reduced padding for compactness */
+  max-width: 700px; /* Slightly smaller width */
+  margin: 20px auto; /* Reduced vertical spacing */
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif; /* Consistent modern font */
+  position: relative;
   text-align: center;
+  overflow: scroll; /* Prevents overflow */
+
 }
 
 // .about-me-container h1 {
