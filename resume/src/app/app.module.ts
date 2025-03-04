@@ -12,6 +12,9 @@ import { SkillsTechStackComponent } from './components/skills-tech-stack/skills-
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -23,11 +26,13 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
     SkillsTechStackComponent,
     WorkExperienceComponent,
     NavigationComponent,
-    LoadingScreenComponent
+    LoadingScreenComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

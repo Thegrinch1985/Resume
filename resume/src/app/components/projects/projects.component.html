@@ -1,0 +1,17 @@
+<div class="component-container">
+
+<div class="project-grid-container">
+    <h1>Projects</h1>
+    <div class="project-grid">
+        <div *ngFor="let project of projects" class="project-card">
+          <img [src]="project.imageUrl" alt="GitHub Repo Image" class="project-image">
+          <div class="project-details">
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description }}</p>
+            <a [href]="project.url" target="_blank">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</div>
