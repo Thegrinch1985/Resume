@@ -13,10 +13,18 @@ export class NavigationComponent implements OnInit {
   constructor(private themeService: ThemeService, private renderer: Renderer2) {}
 
   ngOnInit() {
-    // Ensure the theme is applied right after checking the system theme
-    const systemTheme = this.themeService.getSystemTheme();
-    this.isLightMode = systemTheme === 'light';  // Determine if it's light mode or dark mode based on system theme
-    this.applyTheme();  // Immediately apply the theme based on the system theme
+    // Check if a theme was previously saved in localStorage
+    const storedTheme = localStorage.getItem('theme');
+    
+    if (storedTheme) {
+      this.isLightMode = storedTheme === 'light';
+    } else {
+      // If no stored theme, use system preference
+      const systemTheme = this.themeService.getSystemTheme();
+      this.isLightMode = systemTheme === 'light';
+    }
+
+    this.applyTheme(); // Ensure theme is applied on first load
   }
 
   toggleMenu() {
@@ -38,17 +46,21 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleDarkMode() {
-    this.isLightMode = !this.isLightMode;  // Toggle the mode
-    this.themeService.setDarkMode(!this.isLightMode);  // Update the theme in the service
-    this.applyTheme();  // Apply the theme based on the new state
+    this.isLightMode = !this.isLightMode;
+    this.themeService.setDarkMode(!this.isLightMode);
+    
+    // Save the new preference in localStorage
+    localStorage.setItem('theme', this.isLightMode ? 'light' : 'dark');
+
+    this.applyTheme();
   }
 
   applyTheme() {
     const theme = this.isLightMode ? 'light-theme' : 'dark-theme';
-    this.renderer.setAttribute(document.body, 'class', theme);  // Apply the theme to the body
+    this.renderer.setAttribute(document.body, 'class', theme);
   }
 
   get buttonText(): string {
-    return this.isLightMode ? '🌙' : '🌞';  // Update the button text based on the mode
+    return this.isLightMode ? '🌙' : '🌞';
   }
 }

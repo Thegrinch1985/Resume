@@ -17,13 +17,7 @@
     <section class="resume-section">
       <h2>Skills</h2>
       <ul>
-        <li>Angular, TypeScript, JavaScript</li>
-        <li>HTML5, CSS3, SCSS</li>
-        <li>.NET, C#, Node.js</li>
-        <li>RESTful APIs, GraphQL</li>
-        <li>Docker, Kubernetes, Microsoft Azure</li>
-        <li>Git, Agile Development</li>
-        <li>Testing Frameworks: Karma, Jasmine, Cypress</li>
+        <li *ngFor="let skill of skills">{{ skill }}</li>
       </ul>
     </section>
 
@@ -74,5 +68,3 @@
   </div>
   <button class="button" (click)="downloadResume()">Download Resume</button>
 </div>
-
-

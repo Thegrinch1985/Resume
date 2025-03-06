@@ -1,16 +1,24 @@
 <div class="component-container">
   <div class="work-experience-container">
     <h1>Work Experience</h1>
-    <div class="accordion" *ngFor="let experience of experiences; let i = index">
-      <div class="accordion-header" (click)="toggleAccordion(i)">
-        <h2>{{ experience.company }}</h2>
-        <p>{{ experience.role }} | {{ experience.duration }}</p>
-        <span [class.expanded]="experience.expanded">▼</span>
-      </div>
-      <div class="accordion-body" *ngIf="experience.expanded">
-        <ul>
-          <li *ngFor="let detail of experience.details">{{ detail }}</li>
-        </ul>
+
+    <div class="timeline-container">
+
+
+      <div class="timeline">
+        <div *ngFor="let experience of experiences; let i = index" class="timeline-item"
+             [id]="'experience-' + i">
+          <!-- Work Experience Card -->
+          <div class="timeline-card">
+            <h2>{{ experience.company }}</h2>
+            <p class="role">{{ experience.role }} | {{ experience.duration }}</p>
+            <p class="location">📍 {{ experience.location }}</p>
+
+            <ul>
+              <li *ngFor="let detail of experience.details">{{ detail }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>

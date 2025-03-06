@@ -1,0 +1,32 @@
+<div class="component-container">
+    <div class="education-container">
+      <h1>Education</h1>
+  
+      <div class="timeline-container">
+        <div class="timeline">
+          <div *ngFor="let year of educationData; let i = index" class="timeline-item"
+               [id]="'education-year-' + i">
+            <div class="timeline-card">
+              <h2>{{ year.year }}</h2>
+  
+              <div *ngFor="let institution of year.institutions">
+                <h3>{{ institution.name }}</h3>
+                <p class="degree">{{ institution.degree }}</p>
+                <p class="gpa">📚 GPA: {{ institution.gpa }}</p>
+  
+                <div *ngFor="let semester of institution.semesters">
+                  <h4>{{ semester.name }}</h4>
+                  <ul>
+                    <li *ngFor="let subject of semester.subjects">
+                      <strong>{{ subject.name }}:</strong> {{ subject.grade }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

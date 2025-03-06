@@ -31,7 +31,7 @@ nav ul {
 nav ul li a {
   color: var(--light-gray);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   padding: 10px 18px;
   border-radius: 8px;
   font-weight: 500;
@@ -45,7 +45,7 @@ nav ul li a:hover {
 
 /* Active Link */
 nav ul li a.active {
-  background: var(--slate-gray);
+  background: var(--dark-charcoal);
   font-weight: bold;
 }
 
@@ -65,44 +65,91 @@ nav ul li a.active {
 }
 
 /* Navigation Button (Improved to match the design) */
-.nav-button {
+// .nav-button {
+//   display: inline-block;
+//   margin: 0 auto;  /* Center button */
+//   padding: 12px 25px;
+//   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+//   color: var(--dark-charcoal);
+//   border: none;
+//   border-radius: 25px; /* Rounded for a modern look */
+//   font-size: 18px;
+//   font-weight: 500;  /* Light font-weight to match the links */
+//   text-transform: uppercase;
+//   text-align: center;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+//   transition: all 0.3s ease;
+//   cursor: pointer;
+//   backdrop-filter: blur(10px); /* Soft glassmorphism */
+//   -webkit-backdrop-filter: blur(10px);
+//   border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+// }
+
+// /* Hover Effect */
+// .nav-button:hover {
+//   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+//   transform: translateY(-3px); /* Subtle lift */
+// }
+
+// /* Active (Click) Effect */
+// .nav-button:active {
+//   transform: translateY(1px); /* Slight sink effect */
+//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+// }
+
+// /* Focus Effect */
+// .nav-button:focus {
+//   outline: none;
+//   box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
+// }
+/* Dark Mode Toggle Button */
+.toggle-button {
   display: inline-block;
   margin: 0 auto;  /* Center button */
   padding: 12px 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   color: var(--dark-charcoal);
-  border: none;
-  border-radius: 25px; /* Rounded for a modern look */
-  font-size: 18px;
-  font-weight: 500;  /* Light font-weight to match the links */
-  text-transform: uppercase;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(10px); /* Soft glassmorphism */
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
 }
 
 /* Hover Effect */
-.nav-button:hover {
-  background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px); /* Subtle lift */
+.toggle-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Active (Click) Effect */
-.nav-button:active {
-  transform: translateY(1px); /* Slight sink effect */
+.toggle-button:active {
+  transform: scale(0.95);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Focus Effect */
-.nav-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
+/* Light Mode Icon Animation */
+.light-mode {
+  background: linear-gradient(135deg, var(--cool-silver), var(--light-gray));
+  color: var(--dark-charcoal);
+  transition: background 0.3s ease;
 }
+
+/* Dark Mode Icon Animation */
+.dark-mode {
+  background: linear-gradient(135deg, var(--slate-gray), var(--muted-plum));
+  color: var(--slate-white);
+
+}
+
 
 /* Side Navigation Menu for Mobile */
 @media screen and (max-width: 768px) {
@@ -144,14 +191,14 @@ nav ul li a.active {
     width: 90%;
     border-radius: 8px;
   }
-
-  .nav-button {
-    display: flex;
-    align-items: center;
-    margin-left: auto;  /* This will push the button to the right */
-    width: auto; /* Make the button auto width on mobile */
-    max-width: 250px; /* Limit the width on small screens like iPhones */
-    margin: 20px 0; /* Add vertical margin for spacing */
-    padding: 12px 25px; /* Adjust padding for mobile */
+  .toggle-button {
+    width: 50px;  /* Compact width */
+    height: 50px; /* Keep it square */
+    padding: 10px;
+    font-size: 20px; /* Keep emoji/text readable */
+    border-radius: 50%; /* Circle shape */
+    margin: 10px auto; /* Centered when needed */
   }
+
+
 }

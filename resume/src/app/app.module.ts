@@ -14,6 +14,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './components/contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { EducationComponent } from './components/education/education.component';
 
 
 @NgModule({
@@ -27,12 +30,15 @@ import { HttpClientModule } from '@angular/common/http';
     WorkExperienceComponent,
     NavigationComponent,
     LoadingScreenComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

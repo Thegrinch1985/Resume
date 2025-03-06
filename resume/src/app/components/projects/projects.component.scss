@@ -7,7 +7,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft, elegant shadow */
     font-family: var(--font-family); /* Apply the global font here */
     text-align: center;
-    overflow: scroll; /* Clean layout */
+    overflow: hidden; /* Clean layout */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -54,12 +54,41 @@
     border-top-right-radius: 12px; /* Soften edges */
 }
 
-/* Project details styling */
+/* Individual project card - Fixed height for uniform size */
+.project-card {
+    background: var(--slate-white);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 350px; /* Fixed height to keep all cards the same size */
+}
+
+/* Hover effect for cards */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Project image styling */
+.project-image {
+    width: 100%;
+    height: 180px; /* Ensuring uniform image height */
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
 .project-details {
     padding: 20px;
     flex-grow: 1; /* Ensures content grows evenly */
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-end; /* Pushes the button to the bottom */
 }
 
 /* Project title */
@@ -67,7 +96,7 @@
     margin: 0 0 10px;
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--dark-charcoal); /* Dark charcoal color for project title */
+    color: var(--dark-charcoal);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -76,40 +105,113 @@
 .project-details p {
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 20px;
-    color: var(--gray); /* Use gray color for text */
+    margin-bottom: 10px;
+    color: var(--gray);
     font-weight: 300;
+    flex-grow: 1; /* Pushes button to the bottom */
 }
 
-/* Button / Link styling */
 .project-details a {
-    align-self: start;
+    display: inline-block;
+    text-align: center;
     padding: 10px 20px;
-    background: var(--light-gray); /* Light gray for button background */
-    color: var(--dark-charcoal); /* Dark charcoal for text color */
+    background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+    color: var(--dark-charcoal);
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
-    transition: background 0.3s ease, transform 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: auto; /* Ensures button stays at the bottom */
+    width: auto; /* Ensures it only takes necessary width */
+    min-width: 120px; /* Prevents it from becoming too small */
+    text-align: center;
 }
 
+/* Button hover effect */
 .project-details a:hover {
-    background: var(--slate-gray); /* Slate gray for button hover */
-    transform: translateY(-2px); /* Button hover effect */
+    background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+    transform: scale(1.05);
+}
+
+/* --- Loading Screen --- */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: var(--light-gray);
+    border-radius: 15px;
+  }
+  
+.loading-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-charcoal);
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  /* --- Spinner Animation --- */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 0, 0, 0.15);
+    border-top: 4px solid var(--dark-charcoal);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-arrow {
+    background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+    color: var(--dark-charcoal);
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin: 0 15px;
+}
+
+.nav-arrow:hover {
+    background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+    transform: scale(1.1);
+}
+
+/* Grid layout for projects - ensures 3 cards per row */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Show exactly 3 projects */
+    gap: 25px;
+    justify-content: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Slightly smaller for tablets */
+        grid-template-columns: repeat(2, 1fr); /* Show 2 projects on medium screens */
     }
 }
 
 @media (max-width: 768px) {
     .project-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Mobile screens */
+        grid-template-columns: repeat(1, 1fr); /* Show 1 project on small screens */
     }
 }

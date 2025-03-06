@@ -1,34 +1,67 @@
+// :root {
+//   --light-gray: #FDF6EC;   /* Soft Beige, like autumn morning light */
+//   --dark-charcoal: #3A2C21; /* Deep Brown, inspired by tree bark */
+//   --muted-plum: #B35C44;    /* Warm Rust, like fall leaves */
+//   --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
+//   --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
+//   --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
+//   --font-family: 'Inter', sans-serif;
+//   --primary-bg-color: var(--light-gray);
+//   --primary-text-color: var(--dark-charcoal);
+  
+//   /* Set default styles */
+//   background-color: var(--primary-bg-color);
+//   color: var(--primary-text-color);
+//   transition: background-color 1s ease; /* Transition only the background color */
+// }
+
+// [data-theme='dark'] {
+//   --light-gray: #221A14;   /* Rich Espresso, like autumn evenings */
+//   --dark-charcoal: #F5E9DD; /* Soft Golden Beige, warm light text */
+//   --muted-plum: #D97B58;    /* Burnt Orange, for a fiery autumn feel */
+//   --cool-silver: #6A4F43;   /* Deep Walnut, balancing richness */
+//   --slate-gray: #A77C65;    /* Soft Cinnamon, cozy warmth */
+//   --slate-white: #16110D;   /* Deep Brown-Black, grounding everything */
+//   --primary-bg-color: var(--light-gray);
+//   --primary-text-color: var(--dark-charcoal);
+
+//   background-color: var(--primary-bg-color);
+//   color: var(--primary-text-color);
+//   transition: background-color 1s ease; /* Transition only the background color */
+// }
 :root {
-  --light-gray: #FDF6EC;   /* Soft Beige, like autumn morning light */
-  --dark-charcoal: #3A2C21; /* Deep Brown, inspired by tree bark */
-  --muted-plum: #B35C44;    /* Warm Rust, like fall leaves */
-  --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
-  --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
-  --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
+  --light-gray: #EAF2F8;   /* Ice Blue, like a Nordic winter sky */
+  --dark-charcoal: #2C3E50; /* Deep Fjord Blue, inspired by Nordic waters */
+  --muted-plum: #5D6D7E;    /* Slate Blue, cold and calming */
+  --cool-silver: #AEB6BF;   /* Soft Silver, like misty mountains */
+  --slate-gray: #85929E;    /* Arctic Steel, muted for a clean feel */
+  --slate-white: #F2F3F4;   /* Crisp Snow White, fresh and bright */
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
   
-  /* Set default styles */
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
-  transition: background-color 1s ease; /* Transition only the background color */
+  transition: background-color 1s ease;
 }
 
 [data-theme='dark'] {
-  --light-gray: #221A14;   /* Rich Espresso, like autumn evenings */
-  --dark-charcoal: #F5E9DD; /* Soft Golden Beige, warm light text */
-  --muted-plum: #D97B58;    /* Burnt Orange, for a fiery autumn feel */
-  --cool-silver: #6A4F43;   /* Deep Walnut, balancing richness */
-  --slate-gray: #A77C65;    /* Soft Cinnamon, cozy warmth */
-  --slate-white: #16110D;   /* Deep Brown-Black, grounding everything */
+  --light-gray: #1C2833;   /* Midnight Blue, inspired by Nordic nights */
+  --dark-charcoal: #D5D8DC; /* Frosty Gray, for contrast */
+  --muted-plum: #566573;    /* Winter Storm Gray, deep and moody */
+  --cool-silver: #839192;   /* Foggy Sky, subtle depth */
+  --slate-gray: #99A3A4;    /* Glacier Ash, a muted cold tone */
+  --slate-white: #17202A;   /* Deep Twilight Blue, near-black */
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
 
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
-  transition: background-color 1s ease; /* Transition only the background color */
+  transition: background-color 1s ease;
 }
+
+
+
 
 body {
   background: var(--primary-bg-color);
@@ -130,11 +163,16 @@ body {
   padding: 20px;
 }
 
-h1, h2, h3 {
+h1 {
   margin-bottom: 10px;
   color: var(--primary-text-color);
+  text-align: center;
 }
-
+h2, h3 {
+  margin-bottom: 10px;
+  color: var(--primary-text-color);
+  text-align: left;
+}
 /* Generic Button Styles */
 .button {
   display: inline-block;

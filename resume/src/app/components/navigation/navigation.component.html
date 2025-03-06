@@ -6,11 +6,18 @@
 
   <ul [class.open]="menuOpen">
     <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Me</a></li>
-    <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills & Tech Stack</a></li>
     <li><a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work Experience</a></li>
     <li><a routerLink="/resume" routerLinkActive="active" (click)="closeMenu()">Resume</a></li>
     <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
+    <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills & Tech Stack</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+    <li><a routerLink="/education" routerLinkActive="active" (click)="closeMenu()">Education</a></li>
   </ul>
 
-  <button class="nav-button"  (click)="toggleDarkMode()">{{ buttonText }}</button>
+  <button class="toggle-button" 
+  [ngClass]="isLightMode ? 'light-mode' : 'dark-mode'" 
+  (click)="toggleDarkMode()">
+{{ buttonText }}
+</button>
+
 </nav>

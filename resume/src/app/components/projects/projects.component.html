@@ -1,17 +1,28 @@
 <div class="component-container">
+  <div class="project-grid-container">
+    <h1>Github Projects</h1>
 
-<div class="project-grid-container">
-    <h1>Projects</h1>
-    <div class="project-grid">
-        <div *ngFor="let project of projects" class="project-card">
-          <img [src]="project.imageUrl" alt="GitHub Repo Image" class="project-image">
-          <div class="project-details">
-            <h2>{{ project.title }}</h2>
-            <p>{{ project.description }}</p>
-            <a [href]="project.url" target="_blank">View on GitHub</a>
-          </div>
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="loading-container">
+      <div class="spinner"></div>
+      <p class="loading-text">Fetching GitHub Projects...</p>
+    </div>
+
+    <!-- Navigation Buttons (Hidden While Loading) -->
+    <div class="navigation-buttons" *ngIf="!isLoading">
+      <button (click)="prevProjects()" class="nav-arrow">&#8592;</button>
+      <button (click)="nextProjects()" class="nav-arrow">&#8594;</button>
+    </div>
+
+    <!-- Project Grid (Showing only 3 at a time) -->
+    <div class="project-grid" *ngIf="!isLoading">
+      <div *ngFor="let project of displayedProjects" class="project-card">
+        <img [src]="project.imageUrl" alt="GitHub Repo Image" class="project-image">
+        <div class="project-details">
+          <h2>{{ project.title }}</h2>
+          <a [href]="project.url" target="_blank">View on GitHub</a>
         </div>
       </div>
-      
+    </div>
   </div>
 </div>

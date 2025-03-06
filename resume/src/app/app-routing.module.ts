@@ -7,6 +7,8 @@ import { SkillsTechStackComponent } from './components/skills-tech-stack/skills-
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { StartPageComponent } from './components/start-page/start-page.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { EducationComponent } from './components/education/education.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'skills', component: SkillsTechStackComponent },
   { path: 'work', component: WorkExperienceComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'education', component: EducationComponent },
   { path: '', redirectTo: '/about', pathMatch: 'full' }, // Default to start page
 ];
 

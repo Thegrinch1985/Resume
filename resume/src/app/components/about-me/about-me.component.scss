@@ -8,70 +8,21 @@
 .about-me-container {
   background: var(--slate-white); 
   color: var(--dark-charcoal);
-  padding: 15px; /* Reduced padding for compactness */
-  max-width: 700px; /* Slightly smaller width */
-  margin: 20px auto; /* Reduced vertical spacing */
+  padding: 15px;
+  max-width: 700px; 
+  margin: 20px auto; 
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  font-family: var(--font-family); /* Apply the global font here */
+  font-family: var(--font-family); 
   position: relative;
   text-align: left;
-  overflow: scroll; /* Prevents overflow */
+  overflow: scroll; 
 
 }
-
-// .about-me-container h1 {
-//   font-size: 28px; /* Slightly smaller for balance */
-//   margin-bottom: 10px; /* Reduce vertical gap */
-//   font-weight: bold;
-//   text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
-// }
 
 .about-me-container p {
-  font-size: 16px; /* Smaller font for readability */
-  line-height: 1.6; /* Tighten spacing between lines */
-  margin-bottom: 15px; /* Reduce space below */
+  font-size: 16px; 
+  line-height: 1.6; 
+  margin-bottom: 15px; 
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-}
-
-// .about-me-container h2 {
-//   font-size: 20px;
-//   margin-bottom: 10px;
-//   font-weight: bold;
-//   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
-// }
-
-.about-me-container ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* About Me List */
-.about-me-container ul {
-  list-style: none; /* Removes default list styling */
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap; /* Enables wrapping for responsiveness */
-  justify-content: center; /* Centers the items */
-  gap: 10px; /* Adds consistent spacing between items */
-}
-
-.about-me-container ul li {
-  font-size: 16px; /* Consistent with skills list */
-  margin: 0; /* Removes margin (handled by gap) */
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 8px 12px; /* Compact padding for balance */
-  border-radius: 10px; /* Rounded corners for consistency */
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); /* Subtle text depth */
-  display: inline-block;
-  transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Hover Effects */
-.about-me-container ul li:hover {
-  background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
-  // transform: scale(1.05); /* Subtle hover scaling */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }

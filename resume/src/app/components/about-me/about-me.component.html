@@ -2,7 +2,7 @@
   <div class="about-me-container">
     <h1>About Me</h1>
     
-    <!-- Display aboutText content as paragraphs -->
+    <!-- About Me Content -->
     <div>
       <p>A dynamic Software Developer with six years of experience, I excel in front-end technologies, primarily Angular, and .NET for back-end services. My commitment to software excellence is underpinned by a disciplined approach to testing, utilizing frameworks like Karma, Jasmine for unit testing, and Cypress for integration tests.</p>
 
@@ -13,9 +13,11 @@
       <p>In summary, my technical proficiency in Angular, .NET, and cloud services, combined with my leadership in Agile practices, positions me as an asset capable of contributing to high-performing development teams.</p>
     </div>
 
-    <h2>Hobbies</h2>
-    <ul>
-      <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
-    </ul>
+    <!-- Hobbies Section -->
+    <h1>Hobbies</h1>
+    <div *ngFor="let hobby of hobbies">
+      <h2>{{ hobby.name }}</h2>
+      <p>{{ hobby.description }}</p>
+    </div>
   </div>
 </div>

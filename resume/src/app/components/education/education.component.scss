@@ -1,6 +1,6 @@
 @import 'src/styles.scss';
 
-.work-experience-container {
+.education-container {
   background: var(--slate-white);
   color: var(--dark-charcoal);
   padding: 20px;
@@ -10,12 +10,12 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: scroll; 
-  max-width: 700px;
+
   margin: auto;
 }
 
 /* Hover effect */
-.work-experience-container:hover {
+.education-container:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
@@ -29,7 +29,7 @@
   padding: 30px 0;
 }
 
-/* Timeline Items */
+/* Timeline */
 .timeline {
   width: 80%;
   padding-left: 80px;
@@ -46,7 +46,7 @@
   animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Timeline Card (Experience Box) */
+/* Timeline Card */
 .timeline-card {
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   padding: 20px;
@@ -65,7 +65,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Company Name */
+/* Institution Name */
 .timeline-card h2 {
   font-size: 22px;
   font-weight: bold;
@@ -73,22 +73,39 @@
   margin-bottom: 8px;
 }
 
-/* Role & Duration */
-.timeline-card .role {
-  font-size: 15px;
+/* Degree */
+.timeline-card .degree {
+  font-size: 18px;
   font-weight: 600;
   color: var(--dark-charcoal);
+  margin-bottom: 5px;
 }
 
-/* Location */
-.timeline-card .location {
-  font-size: 15px;
+/* GPA */
+.timeline-card .gpa {
+  font-size: 16px;
   color: var(--dark-charcoal);
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-/* Details List */
+/* Year */
+.timeline-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-charcoal);
+  margin-top: 15px;
+}
+
+/* Semester */
+.timeline-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--muted-plum);
+  margin-top: 10px;
+}
+
+/* Subjects List */
 .timeline-card ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -126,6 +143,4 @@
     width: 100%;
     padding-left: 60px;
   }
-
-
 }
