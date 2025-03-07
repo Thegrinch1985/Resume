@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Ensures the workflow has permission to push
+      contents: write  # Ensure the workflow has permission to push
 
     steps:
       - name: Checkout repository
@@ -21,9 +21,8 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: |
-          cd resume
-          npm install
+        working-directory: Resume/resume  # Corrected path
+        run: npm install
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli
@@ -34,13 +33,12 @@ jobs:
           git config --global user.name "github-actions"
 
       - name: Build Angular App
-        run: |
-          cd resume
-          ng build --configuration production --base-href /Resume/
+        working-directory: Resume/resume  # Ensure we are inside 'resume'
+        run: ng build --configuration production --base-href /Resume/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: resume/dist/resume  # Corrected path
+          publish_dir: Resume/resume/dist/resume  # Corrected path
           publish_branch: gh-pages
