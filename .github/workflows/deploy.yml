@@ -37,6 +37,10 @@ jobs:
         working-directory: resume  # Ensure we are in the correct directory
         run: ng build --configuration production --base-href /Resume/
 
+      - name: Debug - Check if Build Folder Exists
+        run: |
+          ls -la resume/dist/resume  # Debugging step
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
