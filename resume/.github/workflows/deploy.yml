@@ -5,11 +5,12 @@ on:
     branches:
       - main  # Deploy whenever changes are pushed to 'main'
 
+permissions:
+  contents: write  # Ensure the workflow has permission to push
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Ensure the workflow has permission to push
 
     steps:
       - name: Checkout repository
@@ -21,7 +22,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: Resume/resume  # Corrected path
+        working-directory: Resume/resume  # Ensure correct directory
         run: npm install
 
       - name: Install Angular CLI
@@ -33,12 +34,12 @@ jobs:
           git config --global user.name "github-actions"
 
       - name: Build Angular App
-        working-directory: Resume/resume  # Ensure we are inside 'resume'
+        working-directory: Resume/resume  # Ensure build happens inside the correct directory
         run: ng build --configuration production --base-href /Resume/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Resume/resume/dist/resume  # Corrected path
           publish_branch: gh-pages
+          publish_dir: Resume/resume/dist/resume  # Corrected path to dist folder
