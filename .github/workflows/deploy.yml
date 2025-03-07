@@ -22,7 +22,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: Resume/resume  # Ensure correct directory
+        working-directory: resume  # Ensure correct directory
         run: npm install
 
       - name: Install Angular CLI
@@ -34,13 +34,13 @@ jobs:
           git config --global user.name "github-actions"
 
       - name: Build Angular App
-        working-directory: Resume/resume  # Ensure build happens inside the correct directory
+        working-directory: resume  # Ensure we are in the correct directory
         run: ng build --configuration production --base-href /Resume/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Resume/resume/dist/resume  # Corrected path to dist folder
           publish_branch: gh-pages
+          publish_dir: resume/dist/resume  # Corrected path to dist folder
           force_orphan: true  # Ensure we fully replace previous deployment
