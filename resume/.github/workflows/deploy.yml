@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Ensure the workflow has permission to push
+      contents: write  # Ensures the workflow has permission to push
 
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
           git config --global user.email "thegrinch1985@gmail.com"
           git config --global user.name "github-actions"
 
-      - name: Build Angular app
+      - name: Build Angular App
         run: |
           cd resume
           ng build --configuration production --base-href /Resume/
@@ -42,5 +42,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./resume/dist/resume  # Adjusted to match your folder structure
+          publish_dir: resume/dist/resume  # Corrected path
           publish_branch: gh-pages
