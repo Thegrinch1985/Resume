@@ -13,7 +13,7 @@ export class ContactComponent {
   submitForm() {
     if (this.name && this.email && this.message) {
       alert(`Thank you, ${this.name}! Your message has been received.`);
-      // Implement API call here for real backend integration
+   
     } else {
       alert("Please fill in all fields before submitting.");
     }

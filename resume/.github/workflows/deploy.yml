@@ -3,7 +3,7 @@ name: Deploy Angular App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to your main branch if different
+      - main  
 
 jobs:
   deploy:
@@ -20,11 +20,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
       - name: Build Angular app
-        run: ng build --configuration production --base-href /Resume/
+        run: ng build --configuration production --base-href /resume/  
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "thegrinch1985@gmail.com"
+          git config --global user.name "github-actions"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/resume 
+          folder: dist/<your-project-name> 

@@ -1,6 +1,6 @@
 @import 'src/styles.scss';
 
-/* Component Styling */
+
 .skills-container {
   background: var(--slate-white);
   color: var(--dark-charcoal);
@@ -13,7 +13,7 @@
   overflow: auto;
 }
 
-/* Skills Category */
+
 .skills-category {
   margin-bottom: 20px;
 }
@@ -34,7 +34,7 @@
   padding-bottom: 5px;
 }
 
-/* Skills List */
+
 .skills-container ul {
   list-style: none;
   padding: 0;
@@ -56,14 +56,14 @@
   font-weight: 500;
 }
 
-/* Hover Effects */
+
 .skills-container ul li:hover {
   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .skills-container {
     padding: 15px;

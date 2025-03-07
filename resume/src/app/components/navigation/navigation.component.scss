@@ -1,4 +1,4 @@
-/* Main Navigation Bar */
+
 nav {
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ nav {
   z-index: 1000;
 }
 
-/* Navigation List */
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -27,7 +27,7 @@ nav ul {
   align-items: center;
 }
 
-/* Navigation Links */
+
 nav ul li a {
   color: var(--light-gray);
   text-decoration: none;
@@ -43,13 +43,13 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Active Link */
+
 nav ul li a.active {
   background: var(--dark-charcoal);
   font-weight: bold;
 }
 
-/* Modern Hamburger Menu */
+
 .hamburger {
   display: none;
   font-size: 24px;
@@ -64,49 +64,10 @@ nav ul li a.active {
   transform: rotate(90deg);
 }
 
-/* Navigation Button (Improved to match the design) */
-// .nav-button {
-//   display: inline-block;
-//   margin: 0 auto;  /* Center button */
-//   padding: 12px 25px;
-//   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-//   color: var(--dark-charcoal);
-//   border: none;
-//   border-radius: 25px; /* Rounded for a modern look */
-//   font-size: 18px;
-//   font-weight: 500;  /* Light font-weight to match the links */
-//   text-transform: uppercase;
-//   text-align: center;
-//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-//   transition: all 0.3s ease;
-//   cursor: pointer;
-//   backdrop-filter: blur(10px); /* Soft glassmorphism */
-//   -webkit-backdrop-filter: blur(10px);
-//   border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
-// }
 
-// /* Hover Effect */
-// .nav-button:hover {
-//   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
-//   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-//   transform: translateY(-3px); /* Subtle lift */
-// }
-
-// /* Active (Click) Effect */
-// .nav-button:active {
-//   transform: translateY(1px); /* Slight sink effect */
-//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-// }
-
-// /* Focus Effect */
-// .nav-button:focus {
-//   outline: none;
-//   box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
-// }
-/* Dark Mode Toggle Button */
 .toggle-button {
   display: inline-block;
-  margin: 0 auto;  /* Center button */
+  margin: 0 auto;  
   padding: 12px 25px;
   width: 60px;
   height: 60px;
@@ -124,26 +85,26 @@ nav ul li a.active {
   color: var(--dark-charcoal);
 }
 
-/* Hover Effect */
+
 .toggle-button:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Active (Click) Effect */
+
 .toggle-button:active {
   transform: scale(0.95);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Light Mode Icon Animation */
+
 .light-mode {
   background: linear-gradient(135deg, var(--cool-silver), var(--light-gray));
   color: var(--dark-charcoal);
   transition: background 0.3s ease;
 }
 
-/* Dark Mode Icon Animation */
+
 .dark-mode {
   background: linear-gradient(135deg, var(--slate-gray), var(--muted-plum));
   color: var(--slate-white);
@@ -151,7 +112,7 @@ nav ul li a.active {
 }
 
 
-/* Side Navigation Menu for Mobile */
+
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
@@ -192,12 +153,12 @@ nav ul li a.active {
     border-radius: 8px;
   }
   .toggle-button {
-    width: 50px;  /* Compact width */
-    height: 50px; /* Keep it square */
+    width: 50px;  
+    height: 50px; 
     padding: 10px;
-    font-size: 20px; /* Keep emoji/text readable */
-    border-radius: 50%; /* Circle shape */
-    margin: 10px auto; /* Centered when needed */
+    font-size: 20px; 
+    border-radius: 50%; 
+    margin: 10px auto; 
   }
 
 

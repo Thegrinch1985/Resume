@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent unwanted scrolling */
+  overflow: hidden; 
 }
 
 .contact-container {
@@ -18,14 +18,14 @@ html, body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   max-width: 700px;
-  height: 90vh; /* Adjusts the height to fit within viewport */
+  height: 90vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers content vertically */
+  justify-content: center; 
   align-items: center;
 }
 
-/* Hover effect for container */
+
 .contact-container:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -33,19 +33,19 @@ html, body {
 .contact-content {
   display: flex;
   justify-content: space-between;
-  gap: 25px; /* Reduced to improve fitting */
+  gap: 25px; 
   flex-wrap: wrap;
   padding-top: 10px;
   width: 100%;
 }
 
-/* Left Side - Contact Form */
+
 .contact-form {
   flex: 1;
   min-width: 300px;
   max-width: 100%;
   background: var(--light-gray);
-  padding: 15px; /* Reduced padding to improve spacing */
+  padding: 15px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -56,7 +56,7 @@ html, body {
 h2 {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 10px; /* Adjusted for better spacing */
+  margin-bottom: 10px; 
   color: var(--dark-charcoal);
 }
 
@@ -78,7 +78,7 @@ label {
 input, textarea {
   width: 100%;
   max-width: 100%;
-  padding: 10px; /* Reduced padding for better fit */
+  padding: 10px; 
   border-radius: 8px;
   border: 1px solid var(--slate-gray);
   background: #f9f9f9;
@@ -94,11 +94,11 @@ input:focus, textarea:focus {
 }
 
 textarea {
-  min-height: 100px; /* Adjusted for a better fit */
+  min-height: 100px; 
   resize: vertical;
 }
 
-/* Submit Button */
+
 .submit-btn {
   width: 100%;
   padding: 10px;
@@ -116,12 +116,12 @@ textarea {
   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
 }
 
-/* Right Side - Contact Info */
+
 .contact-info {
   flex: 1;
   min-width: 300px;
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 15px; /* Reduced padding */
+  padding: 15px; 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -135,12 +135,12 @@ textarea {
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 12px; /* Adjusted spacing */
+  margin-bottom: 12px; 
 }
 
 .icon {
   font-size: 20px;
-  margin-right: 8px; /* Slightly reduced margin */
+  margin-right: 8px; 
   color: var(--muted-plum);
 }
 
@@ -154,7 +154,7 @@ a:hover {
   color: var(--muted-plum);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
@@ -163,7 +163,7 @@ a:hover {
 
   .contact-container {
     height: auto;
-    min-height: 90vh; /* Ensures content fits within mobile screens */
+    min-height: 90vh; 
     padding-bottom: 15px;
   }
 }

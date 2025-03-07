@@ -14,10 +14,6 @@ export class ProfileComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // Start the typing effect
-    // this.startTypingEffect();
-
-    // Navigate to the resume page after 5 seconds
     setTimeout(() => {
       this.router.navigate(['/start']);
     }, 5000); // 5000ms = 5 seconds
@@ -25,12 +21,9 @@ export class ProfileComponent implements OnInit {
 
   startTypingEffect(): void {
     if (this.typingIndex < this.nameText.length) {
-      // Add the current letter to the typedName array
       this.typedName.push(this.nameText[this.typingIndex]);
       this.typingIndex++;
-
-      // Delay and call the method recursively
-      setTimeout(() => this.startTypingEffect(), 200); // Adjust typing speed (200ms per letter)
+      setTimeout(() => this.startTypingEffect(), 200); 
     }
   }
 }

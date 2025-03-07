@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit {
   constructor(private themeService: ThemeService, private renderer: Renderer2) {}
 
   ngOnInit() {
-    // Check if a theme was previously saved in localStorage
+  
     const storedTheme = localStorage.getItem('theme');
     
     if (storedTheme) {
