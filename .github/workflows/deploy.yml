@@ -34,17 +34,22 @@ jobs:
           git config --global user.name "github-actions"
 
       - name: Build Angular App
-        working-directory: resume  # Ensure we are in the correct directory
+        working-directory: resume
         run: ng build --configuration production --base-href /Resume/
 
-      - name: Debug - Check if Build Folder Exists
+      - name: Move Build Output to Root of `gh-pages`
         run: |
-          ls -la resume/dist/resume  # Debugging step
+          mkdir -p public
+          mv resume/dist/resume/* public/
+
+      - name: Debug - Check if Files Are in the Correct Location
+        run: |
+          ls -la public/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: resume/dist/resume  # Corrected path to dist folder
-          force_orphan: true  # Ensure we fully replace previous deployment
+          publish_dir: public  # Deploy from `public` instead of `resume/`
+          force_orphan: true  # Ensure a clean deployment
