@@ -22,7 +22,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: resume  # Ensure correct directory
+        working-directory: resume
         run: npm install
 
       - name: Install Angular CLI
@@ -37,7 +37,7 @@ jobs:
         working-directory: resume
         run: ng build --configuration production --base-href /Resume/
 
-      - name: Move Build Output to Root of `gh-pages`
+      - name: Move Build Output to Root Before Deployment
         run: |
           mkdir -p public
           mv resume/dist/resume/* public/
