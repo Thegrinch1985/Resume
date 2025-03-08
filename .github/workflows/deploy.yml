@@ -35,7 +35,7 @@ jobs:
 
       - name: Build Angular App
         working-directory: resume  # Correct directory
-        run: ng build --configuration production --base-href /Resume/
+        run: ng build --configuration production --base-href /resume/
 
       - name: Move Build Output to Root Before Deployment
         run: |

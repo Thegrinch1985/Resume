@@ -49,7 +49,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/Resume/"
+              "baseHref": "/resume/"
             },
             "development": {
               "buildOptimizer": false,
