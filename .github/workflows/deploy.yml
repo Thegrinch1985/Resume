@@ -22,7 +22,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: resume  # Correct directory
+        working-directory: resume
         run: npm install
 
       - name: Install Angular CLI
@@ -34,17 +34,21 @@ jobs:
           git config --global user.name "github-actions"
 
       - name: Build Angular App
-        working-directory: resume  # Correct directory
-        run: ng build --configuration production --base-href /resume/
+        working-directory: resume
+        run: ng build --configuration production --base-href /Resume/
 
-      - name: Move Build Output to Root Before Deployment
+      - name: Debug - Check If Build Output Exists
+        run: |
+          ls -la resume/dist/resume  # Check if files exist
+
+      - name: Move Build Output to Public Before Deployment
         run: |
           mkdir -p public
           mv resume/dist/resume/* public/
 
-      - name: Debug - Check if Files Are in the Correct Location
+      - name: Debug - Check If Public Directory Has Files
         run: |
-          ls -la public/
+          ls -la public  # Ensure files exist before deployment
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
