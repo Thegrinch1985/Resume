@@ -39,17 +39,70 @@ jobs:
 
       - name: Move Build Output to Root Before Deployment
         run: |
-          mkdir -p public
-          mv resume/dist/resume/* public/
+          mv resume/dist/resume/* .
 
       - name: Debug - Check if Files Are in the Correct Location
         run: |
-          ls -la public/
+          ls -la
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: public  # Deploy from `public` instead of `resume/`
+          publish_dir: .  # Deploy from root
+          force_orphan: true  # Ensure a clean deployment
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Deploy whenever changes are pushed to 'main'
+
+permissions:
+  contents: write  # Ensure the workflow has permission to push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        working-directory: resume
+        run: npm install
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "thegrinch1985@gmail.com"
+          git config --global user.name "github-actions"
+
+      - name: Build Angular App
+        working-directory: resume
+        run: ng build --configuration production --base-href /Resume/
+
+      - name: Move Build Output to Root Before Deployment
+        run: |
+          mv resume/dist/resume/* .
+
+      - name: Debug - Check if Files Are in the Correct Location
+        run: |
+          ls -la
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .  # Deploy from root
           force_orphan: true  # Ensure a clean deployment
