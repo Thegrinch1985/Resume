@@ -37,18 +37,15 @@ jobs:
         working-directory: resume
         run: ng build --configuration production --base-href /Resume/
 
-      - name: Debug - Check If Build Output Exists
-        run: |
-          ls -la resume/dist/resume  # Check if files exist
-
-      - name: Move Build Output to Public Before Deployment
+      - name: Move Build Output to Root Before Deployment
         run: |
           mkdir -p public
           mv resume/dist/resume/* public/
+          cp public/index.html public/404.html  # Ensures deep links work
 
-      - name: Debug - Check If Public Directory Has Files
+      - name: Debug - Check if Files Are in the Correct Location
         run: |
-          ls -la public  # Ensure files exist before deployment
+          ls -la public/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
