@@ -6,13 +6,13 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: var(--font-family);
-}
+// html, body {
+//   height: 100%;
+//   margin: 0;
+//   padding: 0;
+//   overflow-x: hidden;
+//   font-family: var(--font-family);
+// }
 
 body {
   background-color: var(--background-color, #f4f4f4);
@@ -41,7 +41,6 @@ body {
   justify-content: space-between;
   gap: 25px;
   flex-wrap: wrap;
-  padding-top: 10px;
   width: 100%;
 }
 
