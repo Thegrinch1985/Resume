@@ -169,7 +169,7 @@ export class EducationComponent {
           gpa: 'N/A',
           semesters: [
             {
-              name: 'Leaving Certifcate',
+              name: 'Leaving Certificate',
               subjects: [
                 { name: 'English', grade: 'B' },
                 { name: 'Mathematics', grade: 'B' },

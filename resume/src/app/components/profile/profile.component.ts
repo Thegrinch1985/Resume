@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  nameText = "Donkey Kong"; // The text to type out
-  typedName: string[] = []; // Array to store each letter for animation
+
   private typingIndex = 0; // To track the current position in the text
 
   constructor(private router: Router) { }
@@ -19,11 +18,4 @@ export class ProfileComponent implements OnInit {
     }, 5000); // 5000ms = 5 seconds
   }
 
-  startTypingEffect(): void {
-    if (this.typingIndex < this.nameText.length) {
-      this.typedName.push(this.nameText[this.typingIndex]);
-      this.typingIndex++;
-      setTimeout(() => this.startTypingEffect(), 200); 
-    }
-  }
 }

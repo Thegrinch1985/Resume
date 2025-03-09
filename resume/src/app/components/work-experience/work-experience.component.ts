@@ -38,7 +38,8 @@ export class WorkExperienceComponent  {
       role: 'Intern',
       duration: 'January 2018 – September 2018',
       details: [
-        'Maintained Integration tests using Selenium to ensure application functioned as expected.'
+        'Maintained Integration tests using Selenium to ensure application functioned as expected.',
+        'Wrote test cases to ensure application worked as expected'
       ]
     }
   ];
