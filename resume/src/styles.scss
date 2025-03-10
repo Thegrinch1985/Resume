@@ -1,41 +1,41 @@
 // :root {
-//   --light-gray: #FDF6EC;   
-//   --dark-charcoal: #3A2C21; 
-//   --muted-plum: #B35C44;    
-//   --cool-silver: #E6CBA5;   
-//   --slate-gray: #8C6A5D;    
-//   --slate-white: #FFF9F1;   
+//   --light-gray: #FDF6EC;   /* Soft Beige, like autumn morning light */
+//   --dark-charcoal: #3A2C21; /* Deep Brown, inspired by tree bark */
+//   --muted-plum: #B35C44;    /* Warm Rust, like fall leaves */
+//   --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
+//   --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
+//   --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
 //   --font-family: 'Inter', sans-serif;
 //   --primary-bg-color: var(--light-gray);
 //   --primary-text-color: var(--dark-charcoal);
   
-//   
+//   /* Set default styles */
 //   background-color: var(--primary-bg-color);
 //   color: var(--primary-text-color);
-//   transition: background-color 1s ease; 
+//   transition: background-color 1s ease; /* Transition only the background color */
 // }
 
 // [data-theme='dark'] {
-//   --light-gray: #221A14;   
-//   --dark-charcoal: #F5E9DD; 
-//   --muted-plum: #D97B58;    
-//   --cool-silver: #6A4F43;   
-//   --slate-gray: #A77C65;    
-//   --slate-white: #16110D;   
+//   --light-gray: #221A14;   /* Rich Espresso, like autumn evenings */
+//   --dark-charcoal: #F5E9DD; /* Soft Golden Beige, warm light text */
+//   --muted-plum: #D97B58;    /* Burnt Orange, for a fiery autumn feel */
+//   --cool-silver: #6A4F43;   /* Deep Walnut, balancing richness */
+//   --slate-gray: #A77C65;    /* Soft Cinnamon, cozy warmth */
+//   --slate-white: #16110D;   /* Deep Brown-Black, grounding everything */
 //   --primary-bg-color: var(--light-gray);
 //   --primary-text-color: var(--dark-charcoal);
 
 //   background-color: var(--primary-bg-color);
 //   color: var(--primary-text-color);
-//   transition: background-color 1s ease; 
+//   transition: background-color 1s ease; /* Transition only the background color */
 // }
 :root {
-  --light-gray: #EAF2F8;   
-  --dark-charcoal: #2C3E50; 
-  --muted-plum: #5D6D7E;    
-  --cool-silver: #AEB6BF;   
-  --slate-gray: #85929E;    
-  --slate-white: #F2F3F4;   
+  --light-gray: #EAF2F8;   /* Ice Blue, like a Nordic winter sky */
+  --dark-charcoal: #2C3E50; /* Deep Fjord Blue, inspired by Nordic waters */
+  --muted-plum: #5D6D7E;    /* Slate Blue, cold and calming */
+  --cool-silver: #AEB6BF;   /* Soft Silver, like misty mountains */
+  --slate-gray: #85929E;    /* Arctic Steel, muted for a clean feel */
+  --slate-white: #F2F3F4;   /* Crisp Snow White, fresh and bright */
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
@@ -46,12 +46,12 @@
 }
 
 [data-theme='dark'] {
-  --light-gray: #1C2833;   
-  --dark-charcoal: #D5D8DC; 
-  --muted-plum: #566573;    
-  --cool-silver: #839192;   
-  --slate-gray: #99A3A4;    
-  --slate-white: #17202A;   
+  --light-gray: #1C2833;   /* Midnight Blue, inspired by Nordic nights */
+  --dark-charcoal: #D5D8DC; /* Frosty Gray, for contrast */
+  --muted-plum: #566573;    /* Winter Storm Gray, deep and moody */
+  --cool-silver: #839192;   /* Foggy Sky, subtle depth */
+  --slate-gray: #99A3A4;    /* Glacier Ash, a muted cold tone */
+  --slate-white: #17202A;   /* Deep Twilight Blue, near-black */
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
 
@@ -72,10 +72,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transition: background-color 1s ease; 
+  transition: background-color 1s ease; /* Transition only the background color */
 }
 
-
+/* Button Styling */
 .button {
   display: inline-block;
   margin: 20px auto;
@@ -112,7 +112,7 @@ body {
   box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5);
 }
 
-
+/* Container Styles */
 .component-container {
   width: min(90vw, 1100px);
   height: min(80vh, 600px);
@@ -132,7 +132,7 @@ body {
   box-shadow: 0 14px 28px rgba(37, 36, 41, 0.3) transparent;
 }
 
-
+/* Profile Picture Styling */
 .profile-minimized {
   position: absolute;
   top: 15px;
@@ -151,7 +151,7 @@ body {
   border: 2px solid #fff;
 }
 
-
+/* Start Page Styles */
 .start-page {
   display: flex;
   flex-direction: column;
@@ -173,7 +173,7 @@ h2, h3 {
   color: var(--primary-text-color);
   text-align: left;
 }
-
+/* Generic Button Styles */
 .button {
   display: inline-block;
   margin: 20px auto;
@@ -181,7 +181,7 @@ h2, h3 {
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   color: var(--dark-charcoal);
   border: none;
-  border-radius: 25px; 
+  border-radius: 25px; /* Rounded for a modern look */
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
@@ -189,41 +189,41 @@ h2, h3 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px); /* Soft glassmorphism */
   -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2); 
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
 }
 
-
+/* Hover Effect */
 .button:hover {
   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px); 
+  transform: translateY(-3px); /* Subtle lift */
 }
 
-
+/* Active (Click) Effect */
 .button:active {
-  transform: translateY(1px); 
+  transform: translateY(1px); /* Slight sink effect */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Focus Effect */
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); 
+  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5); /* Focus ring */
 }
 
 
 
-
+/* Start Page Styling */
 .start-page {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column; /* Stack elements vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 90vw; 
-  max-width: 600px; 
+  width: 90vw; /* Responsive width */
+  max-width: 600px; /* Prevent it from becoming too wide */
   padding: 20px;
 }
 
@@ -236,26 +236,26 @@ h2, h3 {
   padding: 24px;
   border-radius: 24px;
   
-  
+  /* Modern shadow */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
   
-  
+  /* Glassmorphic effect */
   background: var(--light-gray);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(37, 36, 41, 0.2);
 
-  font-family: var(--font-family); 
+  font-family: var(--font-family); /* Apply the global font here */
   
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  
+  /* Allow scrolling for overflow content */
   overflow: auto;
 
-  
+  /* Custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(37, 36, 41, 0.3) transparent;
 
@@ -272,7 +272,7 @@ h2, h3 {
     background: transparent;
   }
 
-  
+  /* Hover effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
@@ -280,7 +280,7 @@ h2, h3 {
     box-shadow: 0 14px 28px rgba(37, 36, 41, 0.3) transparent;
   }
 
-  
+  /* Entrance animation */
   animation: fadeInUp 1.2s ease-out;
 
   @keyframes fadeInUp {
@@ -294,7 +294,7 @@ h2, h3 {
     }
   }
 
-  
+  /* Dynamic movement animations */
   &.move-left {
     animation: moveLeft 0.8s ease-out forwards;
   }
@@ -322,14 +322,14 @@ h2, h3 {
   }
 }
 
-
+/* Minimized Profile Picture */
 .profile-minimized {
   position: absolute;
-  top: 15px; 
+  top: 15px; /* Adjusted for tighter layout */
   left: 15px;
   border-radius: 50%;
   overflow: hidden;
-  width: 60px; 
+  width: 60px; /* Slightly smaller size */
   height: 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -338,7 +338,7 @@ h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 2px solid #fff; 
+  border: 2px solid #fff; /* Slightly thinner border */
 }
 
 
