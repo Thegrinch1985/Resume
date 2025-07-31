@@ -3,26 +3,64 @@
 // 🎨 Muted Plum	#3B3235	Dark, desaturated purple-brown
 // 🎨 Cool Silver	#ACB0B9	Light steel gray
 // 🎨 Slate Gray	#82868C	Medium gray with blue undertones
-@import 'src/styles.scss';
+@import "src/styles.scss";
 
 .about-me-container {
-  background: var(--slate-white); 
+  background-color: var(--slate-white);
   color: var(--dark-charcoal);
-  padding: 15px;
-  max-width: 700px; 
-  margin: 20px auto; 
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  font-family: var(--font-family); 
-  position: relative;
-  text-align: left;
-  overflow: scroll; 
+  padding: 2rem;
+  max-width: 720px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+  text-align: center;
+  overflow-y: auto;
 
+  h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    color: var(--muted-plum);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: var(--dark-charcoal);
+    text-align: left;
+  }
 }
 
-.about-me-container p {
-  font-size: 16px; 
-  line-height: 1.6; 
-  margin-bottom: 15px; 
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--cool-silver);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }

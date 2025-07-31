@@ -8,7 +8,7 @@
 //   --font-family: 'Inter', sans-serif;
 //   --primary-bg-color: var(--light-gray);
 //   --primary-text-color: var(--dark-charcoal);
-  
+
 //   /* Set default styles */
 //   background-color: var(--primary-bg-color);
 //   color: var(--primary-text-color);
@@ -39,7 +39,7 @@
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
-  
+
   background-color: var(--primary-bg-color);
   color: var(--primary-text-color);
   transition: background-color 1s ease;
@@ -235,10 +235,10 @@ h2, h3 {
   margin: auto;
   padding: 24px;
   border-radius: 24px;
-  
+
   /* Modern shadow */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
-  
+
   /* Glassmorphic effect */
   background: var(--light-gray);
   backdrop-filter: blur(10px);
@@ -246,7 +246,7 @@ h2, h3 {
   border: 1px solid rgba(37, 36, 41, 0.2);
 
   font-family: var(--font-family); /* Apply the global font here */
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -274,7 +274,7 @@ h2, h3 {
 
   /* Hover effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     // transform: scale(1.04);
     box-shadow: 0 14px 28px rgba(37, 36, 41, 0.3) transparent;

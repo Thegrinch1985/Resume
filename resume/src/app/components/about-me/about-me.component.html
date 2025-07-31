@@ -1,7 +1,12 @@
 <div class="component-container">
   <div class="about-me-container">
-    <h1>About Me</h1>
-    
+    <div class="profile-section">
+      <div class="profile-image">
+        <img src="assets/howie.jpeg" alt="Profile Picture" />
+      </div>
+      <h1>About Me</h1>
+    </div>
+
     <div *ngFor="let paragraph of aboutMeText">
       <p>{{ paragraph }}</p>
     </div>
