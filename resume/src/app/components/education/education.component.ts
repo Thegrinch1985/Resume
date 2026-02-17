@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-education',
@@ -6,6 +12,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./education.component.scss']
 })
 export class EducationComponent {
+  @ViewChild('scrollRoot', { static: true })
+  private scrollRootRef!: ElementRef<HTMLElement>;
+
+  activeYear = '';
+  private yearObserver?: IntersectionObserver;
+
   educationData = [
     {
       year: '4th Year',
@@ -183,4 +195,40 @@ export class EducationComponent {
       ]
     },
   ];
+
+  ngAfterViewInit(): void {
+    this.activeYear = this.educationData[0]?.year ?? '';
+
+    const root = this.scrollRootRef.nativeElement;
+    const items = Array.from(root.querySelectorAll<HTMLElement>('.timeline-item'));
+
+    if (items.length === 0) {
+      return;
+    }
+
+    this.yearObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const year = (entry.target as HTMLElement).dataset['year'];
+          if (year) {
+            this.activeYear = year;
+          }
+        }
+      },
+      {
+        root,
+        threshold: 0,
+        rootMargin: '-45% 0px -45% 0px',
+      }
+    );
+
+    for (const item of items) {
+      this.yearObserver.observe(item);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.yearObserver?.disconnect();
+  }
 }

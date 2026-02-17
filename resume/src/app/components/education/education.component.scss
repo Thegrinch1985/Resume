@@ -16,6 +16,13 @@
   margin: 0.75rem 0 1.25rem;
 }
 
+.timeline-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: start;
+}
+
 
 .timeline-container {
   position: relative;
@@ -28,8 +35,21 @@
 
 
 .timeline {
+  position: relative;
   width: 100%;
-  padding-left: 0;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background-color: var(--cool-silver);
+  opacity: 0.55;
+  border-radius: 999px;
 }
 
 
@@ -38,9 +58,18 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 50px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 22px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background-color: var(--muted-plum);
+  box-shadow: 0 0 0 4px var(--primary-bg-color);
 }
 
 
@@ -122,18 +151,44 @@
   transform: translateX(6px);
 }
 
+.timeline-year-rail {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  justify-self: end;
+}
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.timeline-year-pill {
+  min-width: 74px;
+  max-width: 130px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--cool-silver);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  font-weight: 800;
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.1;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 
 @media (max-width: 1024px) {
     .education-container {
       max-width: 100%;
+    }
+
+    .timeline-layout {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .timeline-year-rail {
+      top: 84px;
+      justify-self: center;
+      order: -1;
     }
   
     .timeline-container {
@@ -143,7 +198,7 @@
   
     .timeline {
       width: 100%;
-      padding-left: 0; 
+      padding-left: 28px;
     }
   
     .timeline-item {
@@ -179,7 +234,20 @@
   
     .timeline {
       width: 100%;
-      padding-left: 0; 
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      left: 10px;
+    }
+
+    .timeline-item::before {
+      left: -20px;
+    }
+
+    .timeline-year-pill {
+      min-width: 68px;
+      padding: 9px 10px;
     }
   
     .timeline-item {

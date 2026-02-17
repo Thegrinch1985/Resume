@@ -1,25 +1,33 @@
-<div class="component-container">
+<div class="component-container" #scrollRoot>
   <div class="work-experience-container">
     <h1>Work Experience</h1>
 
-    <div class="timeline-container">
+    <div class="timeline-layout">
+      <div class="timeline-container">
+        <div class="timeline">
+          <div
+            *ngFor="let experience of experiences; let i = index"
+            class="timeline-item"
+            [id]="'experience-' + i"
+            [attr.data-year]="getYearLabel(experience.duration)"
+          >
+            <!-- Work Experience Card -->
+            <div class="timeline-card">
+              <h2>{{ experience.company }}</h2>
+              <p class="role">{{ experience.role }} | {{ experience.duration }}</p>
+              <p class="location">📍 {{ experience.location }}</p>
 
-
-      <div class="timeline">
-        <div *ngFor="let experience of experiences; let i = index" class="timeline-item"
-             [id]="'experience-' + i">
-          <!-- Work Experience Card -->
-          <div class="timeline-card">
-            <h2>{{ experience.company }}</h2>
-            <p class="role">{{ experience.role }} | {{ experience.duration }}</p>
-            <p class="location">📍 {{ experience.location }}</p>
-
-            <ul>
-              <li *ngFor="let detail of experience.details">{{ detail }}</li>
-            </ul>
+              <ul>
+                <li *ngFor="let detail of experience.details">{{ detail }}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
+      <aside class="timeline-year-rail" aria-hidden="true">
+        <div class="timeline-year-pill">{{ activeYear }}</div>
+      </aside>
     </div>
   </div>
 </div>

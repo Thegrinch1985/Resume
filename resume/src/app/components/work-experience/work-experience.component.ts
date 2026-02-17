@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-work-experience',
@@ -6,6 +12,21 @@ import { Component, AfterViewInit, Renderer2 } from '@angular/core';
   styleUrls: ['./work-experience.component.scss'],
 })
 export class WorkExperienceComponent  {
+  @ViewChild('scrollRoot', { static: true })
+  private scrollRootRef!: ElementRef<HTMLElement>;
+
+  activeYear = '';
+  private yearObserver?: IntersectionObserver;
+  private timelineItems: HTMLElement[] = [];
+  private rafId: number | null = null;
+  private onScroll = () => {
+    if (this.rafId != null) return;
+    this.rafId = window.requestAnimationFrame(() => {
+      this.rafId = null;
+      this.updateActiveYear();
+    });
+  };
+
   experiences = [
     {
       company: 'QUESTAX (CONTRACTED TO BMW GROUP)',
@@ -44,8 +65,113 @@ export class WorkExperienceComponent  {
     }
   ];
 
+  ngAfterViewInit(): void {
+    this.activeYear = this.getYearLabel(this.experiences[0]?.duration ?? '');
 
+    const root = this.scrollRootRef.nativeElement;
+    this.timelineItems = Array.from(
+      root.querySelectorAll<HTMLElement>('.timeline-item')
+    );
 
+    if (this.timelineItems.length === 0) {
+      return;
+    }
 
-  
+    root.addEventListener('scroll', this.onScroll, { passive: true });
+
+    this.yearObserver = new IntersectionObserver(
+      (entries) => {
+        // Only update when something changes visibility; the actual selection logic
+        // is centralized so scroll edges (top/bottom) are handled correctly.
+        if (entries.some((e) => e.isIntersecting)) {
+          this.updateActiveYear();
+        }
+      },
+      {
+        root,
+        threshold: 0,
+      }
+    );
+
+    for (const item of this.timelineItems) {
+      this.yearObserver.observe(item);
+    }
+
+    // Initial sync once layout is painted.
+    this.onScroll();
+  }
+
+  ngOnDestroy(): void {
+    this.yearObserver?.disconnect();
+    const root = this.scrollRootRef?.nativeElement;
+    root?.removeEventListener('scroll', this.onScroll);
+    if (this.rafId != null) {
+      window.cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  private updateActiveYear(): void {
+    const root = this.scrollRootRef.nativeElement;
+    const items = this.timelineItems;
+    if (items.length === 0) return;
+
+    // If we're at the top/bottom edges, the first/last cards may never reach the
+    // "center" of the viewport. Force the label to match those edges.
+    const edgeEpsilonPx = 2;
+    const atTop = root.scrollTop <= edgeEpsilonPx;
+    const atBottom =
+      root.scrollTop + root.clientHeight >= root.scrollHeight - edgeEpsilonPx;
+
+    if (atTop) {
+      const first = items[0]?.dataset['year'];
+      if (first) this.activeYear = first;
+      return;
+    }
+
+    if (atBottom) {
+      const last = items[items.length - 1]?.dataset['year'];
+      if (last) this.activeYear = last;
+      return;
+    }
+
+    const rootRect = root.getBoundingClientRect();
+    const rootCenterY = rootRect.top + rootRect.height * 0.5;
+
+    let bestYear = '';
+    let bestDistance = Number.POSITIVE_INFINITY;
+
+    for (const item of items) {
+      const rect = item.getBoundingClientRect();
+      const isVisible = rect.bottom >= rootRect.top && rect.top <= rootRect.bottom;
+      if (!isVisible) continue;
+
+      const year = item.dataset['year'];
+      if (!year) continue;
+
+      const itemCenterY = rect.top + rect.height * 0.5;
+      const distance = Math.abs(itemCenterY - rootCenterY);
+
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        bestYear = year;
+      }
+    }
+
+    if (bestYear) {
+      this.activeYear = bestYear;
+    }
+  }
+
+  getYearLabel(duration: string): string {
+    const matches = duration.match(/\b\d{4}\b/g) ?? [];
+    const years = Array.from(new Set(matches));
+
+    // Keep the rail minimal: show the start year only.
+    if (years.length >= 1) {
+      return years[0];
+    }
+
+    return /present/i.test(duration) ? 'Now' : '';
+  }
 }
