@@ -1,20 +1,38 @@
 <div class="component-container">
   <div class="about-me-container">
-    <div class="profile-section">
+    <header class="about-header">
       <div class="profile-image avatar-frame avatar-frame--lg">
         <img class="avatar" src="assets/howie.jpeg" alt="Profile Picture" />
       </div>
-      <h1>About Me</h1>
-    </div>
 
-    <div *ngFor="let paragraph of aboutMeText">
-      <p>{{ paragraph }}</p>
-    </div>
+      <div class="about-header-text">
+        <h1>About Me</h1>
+        <p class="about-subtitle">
+          Senior Software Developer • Angular • .NET • Azure
+        </p>
+      </div>
+    </header>
 
-    <h1>Hobbies</h1>
-    <div *ngFor="let hobby of hobbies">
-      <h2>{{ hobby.name }}</h2>
-      <p>{{ hobby.description }}</p>
-    </div>
+    <section class="about-section" aria-label="Professional summary">
+      <h2>Summary</h2>
+      <ul class="about-highlights">
+        <li *ngFor="let paragraph of aboutMeText">{{ paragraph }}</li>
+      </ul>
+    </section>
+
+    <section class="about-section" aria-label="Hobbies">
+      <h2>Hobbies</h2>
+
+      <div class="hobbies-grid">
+        <article class="hobby-card" *ngFor="let hobby of hobbies">
+          <div class="hobby-card-head">
+            <span class="hobby-mark" aria-hidden="true">{{ hobby.name.charAt(0) }}</span>
+            <h3>{{ hobby.name }}</h3>
+          </div>
+
+          <p class="hobby-desc">{{ hobby.description }}</p>
+        </article>
+      </div>
+    </section>
   </div>
 </div>
