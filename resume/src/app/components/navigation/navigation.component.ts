@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -10,21 +10,12 @@ export class NavigationComponent implements OnInit {
   isLightMode: boolean = true;
   menuOpen: boolean = false;
 
-  constructor(private themeService: ThemeService, private renderer: Renderer2) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit() {
-  
-    const storedTheme = localStorage.getItem('theme');
-    
-    if (storedTheme) {
-      this.isLightMode = storedTheme === 'light';
-    } else {
-      // If no stored theme, use system preference
-      const systemTheme = this.themeService.getSystemTheme();
-      this.isLightMode = systemTheme === 'light';
-    }
-
-    this.applyTheme(); // Ensure theme is applied on first load
+    this.themeService.theme$.subscribe((theme) => {
+      this.isLightMode = theme !== 'dark';
+    });
   }
 
   toggleMenu() {
@@ -46,18 +37,7 @@ export class NavigationComponent implements OnInit {
   }
 
   toggleDarkMode() {
-    this.isLightMode = !this.isLightMode;
-    this.themeService.setDarkMode(!this.isLightMode);
-    
-    // Save the new preference in localStorage
-    localStorage.setItem('theme', this.isLightMode ? 'light' : 'dark');
-
-    this.applyTheme();
-  }
-
-  applyTheme() {
-    const theme = this.isLightMode ? 'light-theme' : 'dark-theme';
-    this.renderer.setAttribute(document.body, 'class', theme);
+    this.themeService.setDarkMode(this.isLightMode);
   }
 
   get buttonText(): string {
