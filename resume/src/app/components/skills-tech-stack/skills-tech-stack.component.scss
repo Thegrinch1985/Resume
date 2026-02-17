@@ -2,36 +2,36 @@
 
 
 .skills-container {
-  background: var(--slate-white);
   color: var(--dark-charcoal);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 0;
   font-family: var(--font-family);
-  margin: 30px auto;
-  text-align: center;
-  overflow: auto;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 
 .skills-category {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .skills-container h1 {
-  font-size: 32px;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 0.75rem 0 1.25rem;
+  text-align: center;
 }
 
 .skills-container h2 {
-  font-size: 22px;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
+  color: var(--muted-plum);
+  border-bottom: 2px solid var(--muted-plum);
   display: inline-block;
   padding-bottom: 5px;
+  margin-top: 1.25rem;
 }
 
 
@@ -46,7 +46,7 @@
 }
 
 .skills-container ul li {
-  font-size: 16px;
+  font-size: 1rem;
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   padding: 10px 16px;
   border-radius: 12px;
@@ -66,19 +66,19 @@
 
 @media (max-width: 768px) {
   .skills-container {
-    padding: 15px;
+    max-width: 100%;
   }
 
   .skills-container h1 {
-    font-size: 28px;
+    margin-top: 0.25rem;
   }
 
   .skills-container h2 {
-    font-size: 20px;
+    margin-top: 1.25rem;
   }
 
   .skills-container ul li {
-    font-size: 14px;
-    padding: 8px 14px;
+    font-size: 0.95rem;
+    padding: 8px 12px;
   }
 }

@@ -1,22 +1,19 @@
 @import 'src/styles.scss';
 
 .work-experience-container {
-  background: var(--slate-white);
   color: var(--dark-charcoal);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 0;
   font-family: var(--font-family);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: scroll; 
-  max-width: 700px;
-  margin: auto;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-
-.work-experience-container:hover {
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+.work-experience-container h1 {
+  text-align: center;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  margin: 0.75rem 0 1.25rem;
 }
 
 
@@ -24,15 +21,15 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0 0;
 }
 
 
 .timeline {
-  width: 80%;
-  padding-left: 80px;
+  width: 100%;
+  padding-left: 0;
 }
 
 
@@ -46,11 +43,15 @@
   animation: fadeInUp 0.8s ease forwards;
 }
 
+.timeline-item:first-child {
+  margin-top: 10px;
+}
+
 
 .timeline-card {
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 20px;
-  border-radius: 12px;
+  padding: 18px;
+  border-radius: 14px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: left;
   position: relative;
@@ -61,43 +62,44 @@
 
 .timeline-card:hover {
   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 
 .timeline-card h2 {
-  font-size: 22px;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
   font-weight: bold;
   color: var(--dark-charcoal);
-  margin-bottom: 8px;
+  margin: 0 0 6px;
 }
 
 
 .timeline-card .role {
-  font-size: 15px;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--dark-charcoal);
+  margin: 0 0 4px;
 }
 
 
 .timeline-card .location {
-  font-size: 15px;
+  font-size: 0.95rem;
   color: var(--dark-charcoal);
   font-weight: 500;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
 
 .timeline-card ul {
   list-style-type: disc;
   padding-left: 20px;
-  margin: 10px 0;
+  margin: 10px 0 0;
 }
 
 .timeline-card ul li {
-  font-size: 16px;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin-bottom: 6px;
   color: var(--dark-charcoal);
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -118,8 +120,7 @@
 
 @media (max-width: 1024px) {
   .work-experience-container {
-    padding: 20px;
-    max-width: 90%; 
+    max-width: 100%;
   }
 
   .timeline-container {
@@ -139,7 +140,7 @@
   }
 
   .timeline-card {
-    width: 90%; 
+    width: 100%;
     text-align: left;
   }
 
@@ -153,9 +154,7 @@
 
 @media (max-width: 768px) {
   .work-experience-container {
-    padding: 15px;
-    max-width: 95%;
-    border-radius: 12px;
+    max-width: 100%;
   }
 
   .timeline-container {
@@ -175,7 +174,7 @@
     margin-bottom: 30px; 
   }
   .timeline-card {
-    width: 95%; 
+    width: 100%;
     padding: 15px;
     border-radius: 10px;
   }
