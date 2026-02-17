@@ -6,25 +6,22 @@
 @import "src/styles.scss";
 
 .about-me-container {
-  background-color: var(--slate-white);
   color: var(--dark-charcoal);
-  padding: 2rem;
-  max-width: 720px;
-  margin: 2rem auto;
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
   font-family: var(--font-family);
-  text-align: center;
-  overflow-y: auto;
+  text-align: left;
 
   h1 {
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.6rem, 2.6vw, 2rem);
+    margin: 1rem 0 1.25rem;
+    text-align: center;
   }
 
   h2 {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.25rem);
     margin-top: 1.5rem;
     color: var(--muted-plum);
   }
@@ -34,7 +31,6 @@
     line-height: 1.65;
     margin-bottom: 1rem;
     color: var(--dark-charcoal);
-    text-align: left;
   }
 }
 
@@ -42,6 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .profile-image {
@@ -62,5 +59,12 @@
 
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-image {
+    width: 120px;
+    height: 120px;
   }
 }

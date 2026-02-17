@@ -26,7 +26,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--light-gray);
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-size: 16px;
   padding: 8px 14px;
@@ -41,7 +41,7 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  background: var(--dark-charcoal);
+  background: rgba(255, 255, 255, 0.14);
   font-weight: bold;
 }
 
@@ -51,7 +51,7 @@ nav ul li a.active {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--light-gray);
+  color: rgba(255, 255, 255, 0.92);
   transition: transform 0.3s ease;
 }
 

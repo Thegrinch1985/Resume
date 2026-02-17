@@ -5,7 +5,7 @@
   <!-- Main Content (only visible after loading) -->
   <ng-container *ngIf="!showLoadingScreen">
     <!-- Navigation bar at the top -->
-    <app-navigation></app-navigation>
+    <app-navigation *ngIf="showNavigation"></app-navigation>
 
 
 
