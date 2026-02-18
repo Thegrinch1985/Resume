@@ -35,24 +35,12 @@
 
 .contact-card {
   position: relative;
-  padding: 16px;
-  border-radius: 18px;
+  padding: 18px;
+  border-radius: 14px;
   background: var(--box-bg);
   border: 1px solid var(--box-border-color);
   box-shadow: var(--box-shadow);
-  overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-}
-
-.contact-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background:
-    radial-gradient(120% 120% at 20% 10%, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.0) 55%),
-    radial-gradient(120% 120% at 80% 90%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.0) 60%);
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .contact-card--alt {
@@ -60,7 +48,7 @@
 }
 
 .contact-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--box-shadow-hover);
   background: var(--box-bg-hover);
 }
@@ -99,8 +87,8 @@
   width: 100%;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(37, 36, 41, 0.18);
-  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--box-border-color);
+  background: color-mix(in srgb, var(--primary-bg-color) 72%, transparent);
   color: var(--primary-text-color);
   font-size: 1rem;
   font-weight: 700;
@@ -109,15 +97,15 @@
 
 [data-theme='dark'] .form-group input,
 [data-theme='dark'] .form-group textarea {
-  background: rgba(0, 0, 0, 0.16);
-  border-color: rgba(255, 255, 255, 0.16);
+  background: color-mix(in srgb, var(--primary-bg-color) 70%, transparent);
+  border-color: var(--box-border-color);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: rgba(59, 50, 53, 0.45);
-  box-shadow: 0 0 0 4px rgba(174, 182, 191, 0.28);
+  border-color: color-mix(in srgb, var(--muted-plum) 55%, var(--box-border-color));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--muted-plum) 22%, transparent);
 }
 
 .form-group textarea {
@@ -164,24 +152,16 @@
   gap: 10px;
   align-items: start;
   padding: 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(37, 36, 41, 0.10);
-  background: rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  border: 1px solid var(--box-border-color);
+  background: var(--primary-bg-color);
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-}
-
-[data-theme='dark'] .info-item {
-  background: rgba(0, 0, 0, 0.12);
 }
 
 .info-item:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.36);
-}
-
-[data-theme='dark'] .info-item:hover {
-  background: rgba(0, 0, 0, 0.18);
+  background: color-mix(in srgb, var(--primary-bg-color) 85%, var(--slate-white));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -201,14 +181,9 @@
   border-radius: 999px;
   display: grid;
   place-items: center;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(37, 36, 41, 0.10);
+  background: color-mix(in srgb, var(--primary-bg-color) 78%, transparent);
+  border: 1px solid var(--box-border-color);
   font-size: 18px;
-}
-
-[data-theme='dark'] .icon {
-  background: rgba(0, 0, 0, 0.12);
-  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .info-label {
@@ -226,15 +201,11 @@
 .info-value a {
   color: var(--primary-text-color);
   text-decoration: none;
-  border-bottom: 1px solid rgba(37, 36, 41, 0.20);
-}
-
-[data-theme='dark'] .info-value a {
-  border-bottom-color: rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary-text-color) 20%, transparent);
 }
 
 .info-value a:hover {
-  border-bottom-color: rgba(59, 50, 53, 0.55);
+  border-bottom-color: color-mix(in srgb, var(--muted-plum) 55%, transparent);
 }
 
 @media (max-width: 860px) {
@@ -246,7 +217,7 @@
 @media (max-width: 420px) {
   .contact-card {
     padding: 14px;
-    border-radius: 16px;
+    border-radius: 14px;
   }
 
   .form-group input,

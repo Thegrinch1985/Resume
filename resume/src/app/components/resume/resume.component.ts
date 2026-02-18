@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent {
-  // Dynamically Generated Skills
   skills: string[] = [
     'Angular', 'TypeScript', 'JavaScript',
     'HTML5', 'CSS3', 'SCSS',
@@ -17,11 +16,10 @@ export class ResumeComponent {
     'Testing Frameworks: Karma, Jasmine, Cypress'
   ];
 
-  // Function to Download Resume
-  downloadResume() {
+  downloadResume(): void {
     const link = document.createElement('a');
-    link.href = 'assets/Howie_Lynch_Resume_January_2025.pdf'; // Path to your PDF file
-    link.download = 'Howie_Lynch_Resume_January_2025.pdf'; // Name for the downloaded file
+    link.href = 'assets/Howie_Lynch_Resume_January_2025.pdf';
+    link.download = 'Howie_Lynch_Resume_January_2025.pdf';
     link.click();
   }
 }

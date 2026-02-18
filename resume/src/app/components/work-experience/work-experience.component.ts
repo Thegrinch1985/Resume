@@ -83,8 +83,6 @@ export class WorkExperienceComponent  {
 
     this.yearObserver = new IntersectionObserver(
       (entries) => {
-        // Only update when something changes visibility; the actual selection logic
-        // is centralized so scroll edges (top/bottom) are handled correctly.
         if (entries.some((e) => e.isIntersecting)) {
           this.updateActiveYear();
         }
@@ -99,7 +97,6 @@ export class WorkExperienceComponent  {
       this.yearObserver.observe(item);
     }
 
-    // Initial sync once layout is painted.
     this.onScroll();
   }
 
@@ -122,8 +119,6 @@ export class WorkExperienceComponent  {
     const items = this.timelineItems;
     if (items.length === 0) return;
 
-    // If we're at the top/bottom edges, the first/last cards may never reach the
-    // "center" of the viewport. Force the label to match those edges.
     const edgeEpsilonPx = 2;
     const atTop = root.scrollTop <= edgeEpsilonPx;
     const atBottom =
@@ -187,7 +182,6 @@ export class WorkExperienceComponent  {
     const matches = duration.match(/\b\d{4}\b/g) ?? [];
     const years = Array.from(new Set(matches));
 
-    // Keep the rail minimal: show the start year only.
     if (years.length >= 1) {
       return years[0];
     }

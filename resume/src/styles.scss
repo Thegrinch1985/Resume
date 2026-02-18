@@ -1,52 +1,18 @@
-// :root {
-//   --light-gray: #FDF6EC;   /* Soft Beige, like autumn morning light */
-//   --dark-charcoal: #3A2C21; /* Deep Brown, inspired by tree bark */
-//   --muted-plum: #B35C44;    /* Warm Rust, like fall leaves */
-//   --cool-silver: #E6CBA5;   /* Muted Gold, for subtle contrast */
-//   --slate-gray: #8C6A5D;    /* Soft Mocha, for an earthy feel */
-//   --slate-white: #FFF9F1;   /* Creamy White, for a cozy touch */
-//   --font-family: 'Inter', sans-serif;
-//   --primary-bg-color: var(--light-gray);
-//   --primary-text-color: var(--dark-charcoal);
-
-//   /* Set default styles */
-//   background-color: var(--primary-bg-color);
-//   color: var(--primary-text-color);
-//   transition: background-color 1s ease; /* Transition only the background color */
-// }
-
-// [data-theme='dark'] {
-//   --light-gray: #221A14;   /* Rich Espresso, like autumn evenings */
-//   --dark-charcoal: #F5E9DD; /* Soft Golden Beige, warm light text */
-//   --muted-plum: #D97B58;    /* Burnt Orange, for a fiery autumn feel */
-//   --cool-silver: #6A4F43;   /* Deep Walnut, balancing richness */
-//   --slate-gray: #A77C65;    /* Soft Cinnamon, cozy warmth */
-//   --slate-white: #16110D;   /* Deep Brown-Black, grounding everything */
-//   --primary-bg-color: var(--light-gray);
-//   --primary-text-color: var(--dark-charcoal);
-
-//   background-color: var(--primary-bg-color);
-//   color: var(--primary-text-color);
-//   transition: background-color 1s ease; /* Transition only the background color */
-// }
 :root {
-  /* Modern warm-neutral (common "product" look) */
-  --light-gray: #FAFAF9;    /* App background (Stone 50) */
-  --slate-white: #FFFFFF;  /* Surface / cards */
-  --dark-charcoal: #1F2937;/* Primary text */
-  --cool-silver: #E7E5E4;  /* Borders / dividers (Stone 200) */
-  --slate-gray: #C7C2BC;   /* Secondary surface tint */
-  --muted-text-color: #6B7280; /* Secondary text (Gray 500) */
+  --light-gray: #FAFAF9;
+  --slate-white: #FFFFFF;
+  --dark-charcoal: #1F2937;
+  --cool-silver: #E7E5E4;
+  --slate-gray: #D9E6F2;
+  --muted-text-color: #6B7280;
 
-  /* Subtle blue accent (used across apps) */
   --muted-plum: #2F6DAE;
-  --nav-bg-color: #253B53; /* Dedicated nav background (keeps dark-mode nav tasteful) */
+  --nav-bg-color: #253B53;
 
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
 
-  /* Shared box/card styling (aligned with timeline cards) */
   --box-bg: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
   --box-bg-hover: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
   --box-border-color: color-mix(in srgb, var(--primary-text-color) 12%, transparent);
@@ -55,15 +21,13 @@
 }
 
 [data-theme='dark'] {
-  /* Comfortable dark mode (warm, low-glare) */
-  --light-gray: #0F0E0D;    /* App background */
-  --slate-white: #191716;  /* Surface / cards */
-  --dark-charcoal: #F5F5F4;/* Primary text */
-  --cool-silver: #2B2725;  /* Borders / dividers */
-  --slate-gray: #3A3431;   /* Secondary surface tint */
-  --muted-text-color: #A8A29E; /* Secondary text (Stone 400) */
+  --light-gray: #0F0E0D;
+  --slate-white: #191716;
+  --dark-charcoal: #F5F5F4;
+  --cool-silver: #2B2725;
+  --slate-gray: #1E2A3A;
+  --muted-text-color: #A8A29E;
 
-  /* Accent stays readable on dark */
   --muted-plum: #7AA7D8;
   --nav-bg-color: #1A1817;
 
@@ -172,7 +136,6 @@ h3 {
 
 }
 
-/* Optional: keep layout sizing/scroll, but remove the "card" shell */
 .component-container.component-container--plain {
   background-color: transparent;
   border: none;
@@ -259,7 +222,6 @@ h3 {
   border: 0;
 }
 
-/* Shared avatar styling (used across pages) */
 .avatar-frame {
   --avatar-size: 140px;
   --avatar-ring: 4px;

@@ -65,6 +65,17 @@
   line-height: 1.45;
 }
 
+.resume-header-lines a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--primary-text-color) 35%, transparent);
+  text-underline-offset: 2px;
+}
+
+.resume-header-lines a:hover {
+  text-decoration-color: color-mix(in srgb, var(--muted-plum) 65%, transparent);
+}
+
 .resume-body {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;

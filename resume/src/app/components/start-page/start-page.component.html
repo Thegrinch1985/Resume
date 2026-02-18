@@ -1,20 +1,9 @@
 <app-loading-screen *ngIf="showLoadingScreen"></app-loading-screen>
 <div class="start-page">
-  <!-- Loading Screen -->
-
-  <!-- Main Content (only visible after loading) -->
   <ng-container *ngIf="!showLoadingScreen">
-    <!-- Navigation bar at the top -->
     <app-navigation *ngIf="showNavigation"></app-navigation>
-
-
-
-    <!-- Content that appears below the navigation bar -->
     <div class="content-container">
       <router-outlet></router-outlet>
     </div>
-
-
-    <!-- <ng-content select="[footer-section]"></ng-content> -->
   </ng-container>
 </div>

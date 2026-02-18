@@ -7,15 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  private typingIndex = 0; // To track the current position in the text
-
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['/start']);
-    }, 5000); // 5000ms = 5 seconds
+    }, 5000);
   }
 
 }

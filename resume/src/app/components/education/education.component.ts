@@ -255,7 +255,6 @@ export class EducationComponent {
   }
 
   private getRailLabel(year: string): string {
-    // Compact labels keep the rail elegant on mobile.
     const trimmed = year.trim();
 
     const ordinalYear = trimmed.match(/^(\d)(st|nd|rd|th)\s+Year$/i);
@@ -271,7 +270,6 @@ export class EducationComponent {
       return 'Secondary';
     }
 
-    // Fallback: keep it short without cutting to gibberish.
     if (trimmed.length <= 12) return trimmed;
 
     const words = trimmed.split(/\s+/).filter(Boolean);
