@@ -16,7 +16,10 @@ export class EducationComponent {
   private scrollRootRef!: ElementRef<HTMLElement>;
 
   activeYear = '';
+  activeYearRailLabel = '';
+  yearPulse = false;
   private yearObserver?: IntersectionObserver;
+  private pulseTimer: number | null = null;
 
   educationData = [
     {
@@ -197,7 +200,7 @@ export class EducationComponent {
   ];
 
   ngAfterViewInit(): void {
-    this.activeYear = this.educationData[0]?.year ?? '';
+    this.setActiveYear(this.educationData[0]?.year ?? '');
 
     const root = this.scrollRootRef.nativeElement;
     const items = Array.from(root.querySelectorAll<HTMLElement>('.timeline-item'));
@@ -212,7 +215,7 @@ export class EducationComponent {
           if (!entry.isIntersecting) continue;
           const year = (entry.target as HTMLElement).dataset['year'];
           if (year) {
-            this.activeYear = year;
+            this.setActiveYear(year);
           }
         }
       },
@@ -230,5 +233,49 @@ export class EducationComponent {
 
   ngOnDestroy(): void {
     this.yearObserver?.disconnect();
+    if (this.pulseTimer != null) {
+      window.clearTimeout(this.pulseTimer);
+      this.pulseTimer = null;
+    }
+  }
+
+  private setActiveYear(year: string): void {
+    if (!year || year === this.activeYear) return;
+    this.activeYear = year;
+    this.activeYearRailLabel = this.getRailLabel(year);
+
+    this.yearPulse = true;
+    if (this.pulseTimer != null) {
+      window.clearTimeout(this.pulseTimer);
+    }
+    this.pulseTimer = window.setTimeout(() => {
+      this.yearPulse = false;
+      this.pulseTimer = null;
+    }, 160);
+  }
+
+  private getRailLabel(year: string): string {
+    // Compact labels keep the rail elegant on mobile.
+    const trimmed = year.trim();
+
+    const ordinalYear = trimmed.match(/^(\d)(st|nd|rd|th)\s+Year$/i);
+    if (ordinalYear) {
+      return `${ordinalYear[1]}${ordinalYear[2].toLowerCase()}`;
+    }
+
+    if (/^post-?secondary education$/i.test(trimmed)) {
+      return 'Post-Sec';
+    }
+
+    if (/^secondary education$/i.test(trimmed)) {
+      return 'Secondary';
+    }
+
+    // Fallback: keep it short without cutting to gibberish.
+    if (trimmed.length <= 12) return trimmed;
+
+    const words = trimmed.split(/\s+/).filter(Boolean);
+    const compact = words.slice(0, 2).join(' ');
+    return compact.length <= 12 ? compact : `${compact.slice(0, 11)}…`;
   }
 }

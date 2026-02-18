@@ -26,7 +26,13 @@
       </div>
 
       <aside class="timeline-year-rail" aria-hidden="true">
-        <div class="timeline-year-pill">{{ activeYear }}</div>
+        <div
+          class="timeline-year-pill"
+          [class.timeline-year-pill--pulse]="yearPulse"
+          [attr.title]="activeYear"
+        >
+          {{ activeYear }}
+        </div>
       </aside>
     </div>
   </div>

@@ -30,24 +30,34 @@
 //   transition: background-color 1s ease; /* Transition only the background color */
 // }
 :root {
-  --light-gray: #EAF2F8;   /* Ice Blue, like a Nordic winter sky */
-  --dark-charcoal: #2C3E50; /* Deep Fjord Blue, inspired by Nordic waters */
-  --muted-plum: #5D6D7E;    /* Slate Blue, cold and calming */
-  --cool-silver: #AEB6BF;   /* Soft Silver, like misty mountains */
-  --slate-gray: #85929E;    /* Arctic Steel, muted for a clean feel */
-  --slate-white: #F2F3F4;   /* Crisp Snow White, fresh and bright */
+  /* Modern warm-neutral (common "product" look) */
+  --light-gray: #FAFAF9;    /* App background (Stone 50) */
+  --slate-white: #FFFFFF;  /* Surface / cards */
+  --dark-charcoal: #1F2937;/* Primary text */
+  --cool-silver: #E7E5E4;  /* Borders / dividers (Stone 200) */
+  --slate-gray: #C7C2BC;   /* Secondary surface tint */
+
+  /* Subtle blue accent (used across apps) */
+  --muted-plum: #2F6DAE;
+  --nav-bg-color: #253B53; /* Dedicated nav background (keeps dark-mode nav tasteful) */
+
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
 }
 
 [data-theme='dark'] {
-  --light-gray: #1C2833;   /* Midnight Blue, inspired by Nordic nights */
-  --dark-charcoal: #D5D8DC; /* Frosty Gray, for contrast */
-  --muted-plum: #566573;    /* Winter Storm Gray, deep and moody */
-  --cool-silver: #839192;   /* Foggy Sky, subtle depth */
-  --slate-gray: #99A3A4;    /* Glacier Ash, a muted cold tone */
-  --slate-white: #17202A;   /* Deep Twilight Blue, near-black */
+  /* Comfortable dark mode (warm, low-glare) */
+  --light-gray: #0F0E0D;    /* App background */
+  --slate-white: #191716;  /* Surface / cards */
+  --dark-charcoal: #F5F5F4;/* Primary text */
+  --cool-silver: #2B2725;  /* Borders / dividers */
+  --slate-gray: #3A3431;   /* Secondary surface tint */
+
+  /* Accent stays readable on dark */
+  --muted-plum: #7AA7D8;
+  --nav-bg-color: #1A1817;
+
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
 }
@@ -72,6 +82,7 @@ body {
   padding: 0;
   font-family: var(--font-family);
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
   transition: background-color 300ms ease, color 300ms ease;
 }
@@ -128,7 +139,7 @@ h3 {
 .component-container {
   width: min(92vw, 1100px);
   max-height: calc(100vh - 120px);
-  min-width: 320px;
+  max-height: calc(100dvh - 120px);
   margin: 0 auto;
   padding: 24px;
   border-radius: 24px;
@@ -150,6 +161,24 @@ h3 {
   scrollbar-width: thin;
   scrollbar-color: var(--cool-silver) transparent;
 
+}
+
+@media screen and (max-width: 768px) {
+  .component-container {
+    max-height: calc(100dvh - 108px);
+    padding: 20px;
+    border-radius: 20px;
+    width: min(94vw, 1100px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .component-container {
+    max-height: calc(100dvh - 96px);
+    padding: 16px;
+    border-radius: 18px;
+    width: calc(100vw - 24px);
+  }
 }
 
 .component-container::-webkit-scrollbar {
@@ -267,11 +296,4 @@ h3 {
   background-color: var(--slate-white);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
   filter: saturate(1.05) contrast(1.04);
-}
-
-@media screen and (max-width: 480px) {
-  .component-container {
-    padding: 16px;
-    max-height: calc(100vh - 104px);
-  }
 }

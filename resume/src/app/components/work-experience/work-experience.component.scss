@@ -160,6 +160,22 @@
   text-align: center;
   line-height: 1.05;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  font-variant-numeric: tabular-nums;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.timeline-year-pill--pulse {
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-year-pill {
+    transition: none;
+  }
+  .timeline-year-pill--pulse {
+    transform: none;
+  }
 }
 
 @media (max-width: 1024px) {

@@ -38,6 +38,13 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+@media (max-width: 360px) {
+  .contact-form,
+  .contact-info {
+    min-width: 0;
+  }
+}
+
 .contact-form {
   overflow: hidden;
 }

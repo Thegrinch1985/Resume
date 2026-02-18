@@ -1,28 +1,68 @@
 <div class="component-container">
-  <div class="project-grid-container">
-    <h1>Github Projects</h1>
-
-    <!-- Loading Spinner -->
-    <div *ngIf="isLoading" class="loading-container">
-      <div class="spinner"></div>
-      <p class="loading-text">Fetching GitHub Projects...</p>
-    </div>
-
-    <!-- Navigation Buttons (Hidden While Loading) -->
-    <div class="navigation-buttons" *ngIf="!isLoading">
-      <button (click)="prevProjects()" class="nav-arrow">&#8592;</button>
-      <button (click)="nextProjects()" class="nav-arrow">&#8594;</button>
-    </div>
-
-    <!-- Project Grid (Showing only 3 at a time) -->
-    <div class="project-grid" *ngIf="!isLoading">
-      <div *ngFor="let project of displayedProjects" class="project-card">
-        <img [src]="project.imageUrl" alt="GitHub Repo Image" class="project-image">
-        <div class="project-details">
-          <h2>{{ project.title }}</h2>
-          <a [href]="project.url" target="_blank">View on GitHub</a>
-        </div>
+  <div class="projects-container">
+    <header class="projects-header">
+      <div class="projects-header-text">
+        <h1>Projects</h1>
+        <p class="projects-subtitle">Recent work and experiments from GitHub.</p>
       </div>
+
+      <a
+        class="projects-profile-link"
+        [href]="githubProfileUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Profile
+      </a>
+    </header>
+
+    <div *ngIf="isLoading" class="projects-loading" role="status" aria-live="polite">
+      <div class="projects-spinner" aria-hidden="true"></div>
+      <p class="projects-loading-text">Fetching GitHub projects…</p>
+    </div>
+
+    <div *ngIf="!isLoading && projects.length === 0" class="projects-empty">
+      <p class="projects-empty-title">No projects found.</p>
+      <a
+        class="projects-profile-link projects-profile-link--inline"
+        [href]="githubProfileUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open GitHub profile
+      </a>
+    </div>
+
+    <div class="project-grid" *ngIf="!isLoading && projects.length > 0">
+      <article *ngFor="let project of projects" class="project-card">
+        <div class="project-card-head">
+          <img class="project-github-mark" [src]="githubMark" alt="GitHub" />
+          <h2 class="project-title">{{ project.name }}</h2>
+        </div>
+
+        <p class="project-desc">{{ project.description || 'No description provided.' }}</p>
+
+        <div class="project-meta">
+          <span *ngIf="project.language" class="meta-pill">{{ project.language }}</span>
+          <span *ngIf="project.stars !== null" class="meta-item">★ {{ project.stars }}</span>
+          <span *ngIf="project.forks !== null" class="meta-item">⑂ {{ project.forks }}</span>
+        </div>
+
+        <div class="project-actions">
+          <a class="project-link" [href]="project.url" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a
+            *ngIf="project.homepage"
+            class="project-link project-link--secondary"
+            [href]="project.homepage"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live
+          </a>
+        </div>
+      </article>
     </div>
   </div>
 </div>

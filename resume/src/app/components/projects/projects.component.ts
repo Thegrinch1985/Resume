@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GithubService, Repository } from '../../services/github.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { Subscription } from 'rxjs';
@@ -9,90 +9,67 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-  projects: any[] = [];
-  displayedProjects: any[] = [];
-  activeTab: string | undefined;
+  projects: Array<{
+    id: number;
+    name: string;
+    description: string | null;
+    url: string;
+    homepage: string | null;
+    language: string | null;
+    stars: number | null;
+    forks: number | null;
+  }> = [];
+
   private themeSubscription: Subscription | undefined;
   currentTheme: string = 'light';
 
-  currentIndex: number = 0;
-  itemsPerPage: number = 3;
-  isLoading: boolean = true; // New loading state
+  readonly githubProfileUrl = 'https://github.com/Thegrinch1985';
+  githubMark = 'assets/githublight.png';
+
+  isLoading: boolean = true;
 
   constructor(private githubService: GithubService, private themeService: ThemeService) {}
 
   ngOnInit(): void {
     const username = 'Thegrinch1985';
-  
+
     this.themeSubscription = this.themeService.theme$.subscribe((theme) => {
       this.currentTheme = theme;
-      this.updateProjectImages();
+      this.githubMark = this.getThemeImage();
     });
-  
-    this.githubService.getRepositories(username).subscribe((repos: Repository[]) => {
-      setTimeout(() => { 
-        this.isLoading = false;
-  
-        repos.sort((a, b) => {
-          const nameA = a.name.toLowerCase();
-          const nameB = b.name.toLowerCase();
-          const isALetter = /^[a-zA-Z]/.test(nameA);
-          const isBLetter = /^[a-zA-Z]/.test(nameB);
-  
-          if (isALetter && !isBLetter) return -1;
-          if (!isALetter && isBLetter) return 1;
-          return nameA.localeCompare(nameB);
-        });
-  
-        this.projects = repos.map(repo => ({
-          id: repo.name,
-          title: repo.name.length > 8 ? repo.name.substring(0, 8) + '...' : repo.name, // Truncate name,
-          imageUrl: this.getThemeImage(),
-          url: repo.html_url
-        }));
-  
-        if (this.projects.length > 0) {
-          this.activeTab = this.projects[0].id;
-        }
-  
-        this.updateDisplayedProjects();
-      }, 2000);
-    });
-  }
-  
 
-  updateProjectImages(): void {
-    this.projects = this.projects.map(project => ({
-      ...project,
-      imageUrl: this.getThemeImage()
-    }));
-    this.updateDisplayedProjects();
+    this.githubMark = this.getThemeImage();
+
+    this.githubService
+      .getRepositories(username, { perPage: 100, sort: 'updated', direction: 'desc' })
+      .subscribe({
+        next: (repos: Repository[]) => {
+          const cleaned = repos
+            .filter((r) => !r.fork)
+            .filter((r) => !r.archived);
+
+          this.projects = cleaned.map((repo) => ({
+            id: repo.id,
+            name: repo.name,
+            description: repo.description ?? null,
+            url: repo.html_url,
+            homepage: repo.homepage ? repo.homepage : null,
+            language: repo.language ?? null,
+            stars: typeof repo.stargazers_count === 'number' ? repo.stargazers_count : null,
+            forks: typeof repo.forks_count === 'number' ? repo.forks_count : null,
+          }));
+
+          this.isLoading = false;
+        },
+        error: () => {
+          this.projects = [];
+          this.isLoading = false;
+        },
+      });
   }
 
   getThemeImage(): string {
     return this.currentTheme === 'dark' ? 'assets/githubdark.png' : 'assets/githublight.png';
-  }
-
-  nextProjects(): void {
-    if (this.currentIndex + this.itemsPerPage < this.projects.length) {
-      this.currentIndex += this.itemsPerPage;
-    } else {
-      this.currentIndex = 0;
-    }
-    this.updateDisplayedProjects();
-  }
-
-  prevProjects(): void {
-    if (this.currentIndex - this.itemsPerPage >= 0) {
-      this.currentIndex -= this.itemsPerPage;
-    } else {
-      this.currentIndex = this.projects.length - (this.projects.length % this.itemsPerPage || this.itemsPerPage);
-    }
-    this.updateDisplayedProjects();
-  }
-
-  updateDisplayedProjects(): void {
-    this.displayedProjects = this.projects.slice(this.currentIndex, this.currentIndex + this.itemsPerPage);
   }
 
   ngOnDestroy(): void {

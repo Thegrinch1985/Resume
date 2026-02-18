@@ -16,9 +16,11 @@ export class WorkExperienceComponent  {
   private scrollRootRef!: ElementRef<HTMLElement>;
 
   activeYear = '';
+  yearPulse = false;
   private yearObserver?: IntersectionObserver;
   private timelineItems: HTMLElement[] = [];
   private rafId: number | null = null;
+  private pulseTimer: number | null = null;
   private onScroll = () => {
     if (this.rafId != null) return;
     this.rafId = window.requestAnimationFrame(() => {
@@ -66,7 +68,7 @@ export class WorkExperienceComponent  {
   ];
 
   ngAfterViewInit(): void {
-    this.activeYear = this.getYearLabel(this.experiences[0]?.duration ?? '');
+    this.setActiveYear(this.getYearLabel(this.experiences[0]?.duration ?? ''));
 
     const root = this.scrollRootRef.nativeElement;
     this.timelineItems = Array.from(
@@ -109,6 +111,10 @@ export class WorkExperienceComponent  {
       window.cancelAnimationFrame(this.rafId);
       this.rafId = null;
     }
+    if (this.pulseTimer != null) {
+      window.clearTimeout(this.pulseTimer);
+      this.pulseTimer = null;
+    }
   }
 
   private updateActiveYear(): void {
@@ -125,13 +131,13 @@ export class WorkExperienceComponent  {
 
     if (atTop) {
       const first = items[0]?.dataset['year'];
-      if (first) this.activeYear = first;
+      if (first) this.setActiveYear(first);
       return;
     }
 
     if (atBottom) {
       const last = items[items.length - 1]?.dataset['year'];
-      if (last) this.activeYear = last;
+      if (last) this.setActiveYear(last);
       return;
     }
 
@@ -159,8 +165,22 @@ export class WorkExperienceComponent  {
     }
 
     if (bestYear) {
-      this.activeYear = bestYear;
+      this.setActiveYear(bestYear);
     }
+  }
+
+  private setActiveYear(year: string): void {
+    if (!year || year === this.activeYear) return;
+    this.activeYear = year;
+
+    this.yearPulse = true;
+    if (this.pulseTimer != null) {
+      window.clearTimeout(this.pulseTimer);
+    }
+    this.pulseTimer = window.setTimeout(() => {
+      this.yearPulse = false;
+      this.pulseTimer = null;
+    }, 160);
   }
 
   getYearLabel(duration: string): string {

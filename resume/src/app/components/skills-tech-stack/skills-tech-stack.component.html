@@ -1,12 +1,23 @@
 <div class="component-container">
-  <div class="skills-container">
-    <h1>Skills & Tech Stack</h1>
+  <div class="skills-page">
+    <header class="skills-header">
+      <div class="skills-header-text">
+        <h1>Skills &amp; Tech Stack</h1>
+        <p class="skills-subtitle">Tools, languages, and practices I use to ship.</p>
+      </div>
+    </header>
 
-    <div class="skills-category" *ngFor="let category of skillsCategories">
-      <h2>{{ category.name }}</h2>
-      <ul>
-        <li *ngFor="let item of category.items">{{ item }}</li>
-      </ul>
-    </div>
+    <section class="skills-grid" aria-label="Skills categories">
+      <article class="skills-card" *ngFor="let category of skillsCategories">
+        <div class="skills-card-head">
+          <h2>{{ category.name }}</h2>
+          <span class="skills-count" aria-hidden="true">{{ category.items.length }}</span>
+        </div>
+
+        <ul class="skills-pills">
+          <li class="skills-pill" *ngFor="let item of category.items">{{ item }}</li>
+        </ul>
+      </article>
+    </section>
   </div>
 </div>

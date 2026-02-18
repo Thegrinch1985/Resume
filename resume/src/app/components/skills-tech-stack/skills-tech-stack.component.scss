@@ -1,7 +1,6 @@
 @import 'src/styles.scss';
 
-
-.skills-container {
+.skills-page {
   color: var(--dark-charcoal);
   padding: 0;
   font-family: var(--font-family);
@@ -11,74 +10,138 @@
   text-align: left;
 }
 
-
-.skills-category {
-  margin-bottom: 18px;
+.skills-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0.25rem 0 1.25rem;
 }
 
-.skills-container h1 {
+.skills-header-text h1 {
   font-size: clamp(1.6rem, 2.6vw, 2rem);
-  font-weight: bold;
-  margin: 0.75rem 0 1.25rem;
-  text-align: center;
+  font-weight: 800;
+  margin: 0;
+  text-align: left;
+  color: var(--primary-text-color);
 }
 
-.skills-container h2 {
-  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
-  font-weight: 600;
-  margin-bottom: 10px;
+.skills-subtitle {
+  margin: 8px 0 0;
+  color: var(--slate-gray);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.skills-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
+  border: 1px solid rgba(37, 36, 41, 0.12);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  overflow: hidden;
+}
+
+.skills-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.0) 55%),
+    radial-gradient(120% 120% at 80% 90%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.0) 60%);
+}
+
+.skills-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.14);
+}
+
+.skills-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.skills-card-head h2 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.7vw, 1.15rem);
+  font-weight: 900;
   color: var(--muted-plum);
-  border-bottom: 2px solid var(--muted-plum);
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-top: 1.25rem;
+  letter-spacing: 0.2px;
 }
 
+.skills-count {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(174, 182, 191, 0.35);
+  border: 1px solid rgba(37, 36, 41, 0.10);
+  color: var(--primary-text-color);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
+}
 
-.skills-container ul {
+.skills-pills {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 12px 0 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-.skills-container ul li {
-  font-size: 1rem;
+.skills-pill {
+  font-size: 0.95rem;
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 10px 16px;
-  border-radius: 12px;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+  color: var(--primary-text-color);
 }
 
-
-.skills-container ul li:hover {
+.skills-pill:hover {
   background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
-
 
 @media (max-width: 768px) {
-  .skills-container {
+  .skills-page {
     max-width: 100%;
   }
 
-  .skills-container h1 {
-    margin-top: 0.25rem;
+  .skills-header {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-header {
+    flex-direction: column;
   }
 
-  .skills-container h2 {
-    margin-top: 1.25rem;
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
+}
 
-  .skills-container ul li {
-    font-size: 0.95rem;
-    padding: 8px 12px;
+@media (prefers-reduced-motion: reduce) {
+  .skills-card,
+  .skills-pill {
+    transition: none;
   }
 }

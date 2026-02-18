@@ -52,91 +52,130 @@
   line-height: 1.55;
 }
 
-
-.resume-section {
-  margin-bottom: 20px; 
+.resume-sections {
+  display: grid;
+  gap: 14px;
 }
 
-.resume-section h2 {
+.resume-card {
+  position: relative;
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
+  border: 1px solid rgba(37, 36, 41, 0.12);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+}
+
+.resume-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.0) 55%),
+    radial-gradient(120% 120% at 80% 90%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.0) 60%);
+}
+
+.resume-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.resume-card-head h2 {
+  margin: 0;
   font-size: clamp(1.1rem, 1.8vw, 1.25rem);
   color: var(--muted-plum);
-  margin: 1.25rem 0 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
 }
 
-.resume-section h3 {
-  font-size: clamp(1.05rem, 1.7vw, 1.15rem);
-  margin: 0.75rem 0 0.25rem;
+.resume-card-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(174, 182, 191, 0.35);
+  border: 1px solid rgba(37, 36, 41, 0.10);
+  color: var(--primary-text-color);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  flex: 0 0 auto;
 }
 
-.resume-section ul {
+.resume-skill-pills {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 12px 0 0;
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.resume-section ul li {
-  font-size: 16px; 
-  margin: 0; 
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 8px 12px; 
-  border-radius: 10px; 
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); 
-  display: inline-block;
-  transition: transform 0.3s ease, background 0.3s ease; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-.resume-section ul li:hover {
-  background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
-  // transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
-}
-
-
-.skills-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 10px; 
-}
-
-.skills-container ul li {
-  font-size: 16px; 
-  margin: 0; 
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  padding: 8px 12px; 
-  border-radius: 10px; 
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); 
-  display: inline-block;
-  transition: transform 0.3s ease, background 0.3s ease; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-
-.skills-container ul li:hover {
-  background: linear-gradient(135deg, var(--slate-gray),var(--light-gray));
-  // transform: scale(1.05); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
-}
-
-
-.experience-item,
-.education-item {
-  margin-bottom: 10px; 
-}
-
-.experience-item p,
-.education-item p {
+.resume-skill-pill {
   font-size: 0.95rem;
-  color: var(--dark-charcoal);
-  line-height: 1.5; 
+  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+  color: var(--primary-text-color);
+}
+
+.resume-timeline {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.resume-role {
+  position: relative;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(37, 36, 41, 0.10);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+[data-theme='dark'] .resume-role {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.resume-role-head h3,
+.resume-edu h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.7vw, 1.15rem);
+  font-weight: 900;
+  color: var(--primary-text-color);
+}
+
+.resume-role-meta {
+  margin: 6px 0 0;
+  color: var(--slate-gray);
+  font-weight: 800;
+  letter-spacing: 0.1px;
+  line-height: 1.35;
+}
+
+.resume-bullets {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--primary-text-color);
+}
+
+.resume-bullets li {
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+.resume-edu {
+  margin-top: 12px;
+}
+
+.resume-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 
@@ -166,8 +205,9 @@
     font-size: 20px;
   }
 
-  .resume-section ul li {
-    font-size: 14px;
+  .resume-skill-pill {
+    font-size: 0.9rem;
+    padding: 7px 10px;
   }
 }
 

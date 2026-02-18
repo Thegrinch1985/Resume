@@ -12,18 +12,18 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 96px 16px 24px;
+  padding: calc(96px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
 }
 
 @media screen and (max-width: 768px) {
   .content-container {
-    padding-top: 84px;
+    padding-top: calc(84px + env(safe-area-inset-top));
   }
 }
 
 @media screen and (max-width: 480px) {
   .content-container {
-    padding: 76px 12px 20px;
+    padding: calc(76px + env(safe-area-inset-top)) 12px calc(20px + env(safe-area-inset-bottom));
   }
 }
 

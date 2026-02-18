@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 
 export interface Repository {
   id: number;
   name: string;
-  description: string;
+  description: string | null;
   html_url: string;
-  // Other properties if needed
+  homepage?: string | null;
+  language?: string | null;
+  stargazers_count?: number;
+  forks_count?: number;
+  fork?: boolean;
+  archived?: boolean;
 }
 @Injectable({
   providedIn: 'root'
@@ -20,8 +26,22 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
-  // Replace 'your-github-username' with your actual GitHub username when calling this method
-  getRepositories(username: string): Observable<Repository[]> {
-    return this.http.get<Repository[]>(`${this.baseUrl}/users/${username}/repos`);
+  getRepositories(
+    username: string,
+    options?: {
+      perPage?: number;
+      sort?: 'created' | 'updated' | 'pushed' | 'full_name';
+      direction?: 'asc' | 'desc';
+    }
+  ): Observable<Repository[]> {
+    const params = new HttpParams({
+      fromObject: {
+        per_page: String(options?.perPage ?? 100),
+        sort: options?.sort ?? 'updated',
+        direction: options?.direction ?? 'desc',
+      },
+    });
+
+    return this.http.get<Repository[]>(`${this.baseUrl}/users/${username}/repos`, { params });
   }
 }
