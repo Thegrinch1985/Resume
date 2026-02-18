@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'education', component: EducationComponent },
-  { path: '', redirectTo: '/about', pathMatch: 'full' }, // Default to start page
+  { path: '', redirectTo: '/resume', pathMatch: 'full' }, // Default to start page
 ];
 
 

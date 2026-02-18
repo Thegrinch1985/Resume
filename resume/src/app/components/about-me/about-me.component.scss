@@ -86,8 +86,8 @@
   padding: 12px 14px;
   padding-left: 38px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
-  border: 1px solid rgba(37, 36, 41, 0.12);
+  background: var(--box-bg);
+  border: 1px solid var(--box-border-color);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   line-height: 1.6;
 }
@@ -121,10 +121,10 @@
   position: relative;
   padding: 14px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
+  background: var(--box-bg);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(37, 36, 41, 0.12);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  border: 1px solid var(--box-border-color);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   overflow: hidden;
 }
 
@@ -156,6 +156,7 @@
 
 .hobby-card:hover {
   transform: translateY(-2px);
+  background: var(--box-bg-hover);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 

@@ -36,6 +36,7 @@
   --dark-charcoal: #1F2937;/* Primary text */
   --cool-silver: #E7E5E4;  /* Borders / dividers (Stone 200) */
   --slate-gray: #C7C2BC;   /* Secondary surface tint */
+  --muted-text-color: #6B7280; /* Secondary text (Gray 500) */
 
   /* Subtle blue accent (used across apps) */
   --muted-plum: #2F6DAE;
@@ -44,6 +45,13 @@
   --font-family: 'Inter', sans-serif;
   --primary-bg-color: var(--light-gray);
   --primary-text-color: var(--dark-charcoal);
+
+  /* Shared box/card styling (aligned with timeline cards) */
+  --box-bg: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+  --box-bg-hover: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+  --box-border-color: color-mix(in srgb, var(--primary-text-color) 12%, transparent);
+  --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.20);
 }
 
 [data-theme='dark'] {
@@ -53,6 +61,7 @@
   --dark-charcoal: #F5F5F4;/* Primary text */
   --cool-silver: #2B2725;  /* Borders / dividers */
   --slate-gray: #3A3431;   /* Secondary surface tint */
+  --muted-text-color: #A8A29E; /* Secondary text (Stone 400) */
 
   /* Accent stays readable on dark */
   --muted-plum: #7AA7D8;
@@ -105,7 +114,7 @@ h3 {
   margin: 20px auto;
   padding: 12px 25px;
   background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  color: var(--dark-charcoal);
+  color: var(--primary-text-color);
   border: none;
   border-radius: 25px;
   font-size: 18px;
@@ -133,7 +142,7 @@ h3 {
 
 .button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(169, 120, 163, 0.5);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--muted-plum) 35%, transparent);
 }
 
 .component-container {
@@ -161,6 +170,16 @@ h3 {
   scrollbar-width: thin;
   scrollbar-color: var(--cool-silver) transparent;
 
+}
+
+/* Optional: keep layout sizing/scroll, but remove the "card" shell */
+.component-container.component-container--plain {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -207,7 +226,7 @@ h3 {
 }
 
 .component-container:hover {
-  box-shadow: 0 14px 28px rgba(37, 36, 41, 0.3) transparent;
+  box-shadow: 0 14px 28px rgba(37, 36, 41, 0.22), 0 6px 12px rgba(37, 36, 41, 0.16);
 }
 
 @keyframes fadeInUp {

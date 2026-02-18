@@ -1,97 +1,101 @@
-<div class="component-container">
-  <div class="resume-container">
-    <!-- Header Section -->
-    <header class="resume-header">
-      <div class="resume-header-top">
-        <div class="resume-avatar avatar-frame">
-          <img class="avatar" src="assets/howie.jpeg" alt="Profile Picture" />
+<div class="component-container component-container--plain">
+  <div class="resume-page" aria-label="Resume">
+    <div class="resume-paper">
+      <!-- Header Section -->
+      <header class="resume-header">
+        <div class="resume-header-top">
+          <div class="resume-avatar avatar-frame">
+            <img class="avatar" src="assets/howie.jpeg" alt="Profile Picture" />
+          </div>
+
+          <div class="resume-header-text">
+            <h1>Howie Lynch</h1>
+            <p>Senior Software Developer | Angular Enthusiast | Cloud Specialist</p>
+          </div>
         </div>
 
-        <div class="resume-header-text">
-          <h1>Howie Lynch</h1>
-          <p>Senior Software Developer | Angular Enthusiast | Cloud Specialist</p>
+        <div class="resume-header-lines">
+          <p>Email: howielynch@gmail.com</p>
+          <p>LinkedIn: linkedin.com/in/howielynch</p>
         </div>
+      </header>
+
+      <div class="resume-body">
+        <aside class="resume-sidebar" aria-label="Skills">
+          <section class="resume-section">
+            <div class="resume-section-head">
+              <h2>Skills</h2>
+              <span class="resume-count" aria-hidden="true">{{ skills.length }}</span>
+            </div>
+            <ul class="resume-skill-pills">
+              <li class="resume-skill-pill" *ngFor="let skill of skills">{{ skill }}</li>
+            </ul>
+          </section>
+        </aside>
+
+        <main class="resume-main">
+          <section class="resume-section" aria-label="Experience">
+            <div class="resume-section-head">
+              <h2>Experience</h2>
+            </div>
+
+            <article class="resume-entry">
+              <div class="resume-entry-head">
+                <h3>Full Stack Developer</h3>
+                <p class="resume-entry-meta">BMW Group • Munich, Germany • June 2022 – Present</p>
+              </div>
+              <ul class="resume-bullets">
+                <li>Collaborated on a significant project employing Angular and .NET, with containerization using Docker and orchestration via Kubernetes.</li>
+                <li>Maintained high-quality code standards through rigorous unit and integration testing.</li>
+                <li>Guided a team of 8 as a Scrum Master, conducting daily stand-ups, refining processes, and serving as the focal point in larger organizational meetings.</li>
+                <li>Proficient in cloud computing services, specializing in Microsoft Azure for application management, optimization, and deployment.</li>
+                <li>Steered team collaboration toward meeting business objectives and delivering successful outcomes.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="resume-entry-head">
+                <h3>Full-stack Developer Consultant</h3>
+                <p class="resume-entry-meta">Bearing Point • Dublin, Ireland • June 2019 – June 2022</p>
+              </div>
+              <ul class="resume-bullets">
+                <li>Developed and enhanced user interfaces for autonomous vehicle management systems using Angular, focused on optimizing in-facility navigation capabilities.</li>
+                <li>Conducted comprehensive testing of .NET back-end services, ensuring robust integration with vehicle management platforms via IoT solutions.</li>
+                <li>Contributed to deployment strategies by incorporating Docker containerization, improving scalability and consistency across cloud-based infrastructures.</li>
+                <li>Modernized legacy case management systems by integrating up-to-date technologies, including Angular for front-end and C# for back-end development, coupled with SQL Server for data management.</li>
+              </ul>
+            </article>
+
+            <article class="resume-entry">
+              <div class="resume-entry-head">
+                <h3>Intern</h3>
+                <p class="resume-entry-meta">VHI Healthcare • Dublin, Ireland • January 2018 – September 2018</p>
+              </div>
+              <ul class="resume-bullets">
+                <li>Completed a work placement, providing an excellent learning opportunity.</li>
+                <li>Enhanced comprehension of IT functions within a business context and learned essential elements for constructing and organizing IT projects.</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="resume-section" aria-label="Education">
+            <div class="resume-section-head">
+              <h2>Education</h2>
+            </div>
+
+            <article class="resume-entry resume-entry--compact">
+              <div class="resume-entry-head">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p class="resume-entry-meta">Technology University of Dublin, Ireland • 2015 – 2019</p>
+              </div>
+            </article>
+          </section>
+        </main>
       </div>
 
-      <p>Email: howielynch@gmail.com | Phone: +353 86 218 5243</p>
-      <p>LinkedIn: linkedin.com/in/howielynch</p>
-    </header>
-
-    <div class="resume-sections">
-      <!-- Skills Section -->
-      <section class="resume-card" aria-label="Skills">
-        <div class="resume-card-head">
-          <h2>Skills</h2>
-          <span class="resume-card-badge" aria-hidden="true">{{ skills.length }}</span>
-        </div>
-
-        <ul class="resume-skill-pills">
-          <li class="resume-skill-pill" *ngFor="let skill of skills">{{ skill }}</li>
-        </ul>
-      </section>
-
-      <!-- Experience Section -->
-      <section class="resume-card" aria-label="Experience">
-        <div class="resume-card-head">
-          <h2>Experience</h2>
-        </div>
-
-        <div class="resume-timeline">
-          <article class="resume-role">
-            <div class="resume-role-head">
-              <h3>Full Stack Developer</h3>
-              <p class="resume-role-meta">BMW Group • Munich, Germany • June 2022 – Present</p>
-            </div>
-            <ul class="resume-bullets">
-              <li>Collaborated on a significant project employing Angular and .NET, with containerization using Docker and orchestration via Kubernetes.</li>
-              <li>Maintained high-quality code standards through rigorous unit and integration testing.</li>
-              <li>Guided a team of 8 as a Scrum Master, conducting daily stand-ups, refining processes, and serving as the focal point in larger organizational meetings.</li>
-              <li>Proficient in cloud computing services, specializing in Microsoft Azure for application management, optimization, and deployment.</li>
-              <li>Steered team collaboration toward meeting business objectives and delivering successful outcomes.</li>
-            </ul>
-          </article>
-
-          <article class="resume-role">
-            <div class="resume-role-head">
-              <h3>Full-stack Developer Consultant</h3>
-              <p class="resume-role-meta">Bearing Point • Dublin, Ireland • June 2019 – June 2022</p>
-            </div>
-            <ul class="resume-bullets">
-              <li>Developed and enhanced user interfaces for autonomous vehicle management systems using Angular, focused on optimizing in-facility navigation capabilities.</li>
-              <li>Conducted comprehensive testing of .NET back-end services, ensuring robust integration with vehicle management platforms via IoT solutions.</li>
-              <li>Contributed to deployment strategies by incorporating Docker containerization, improving scalability and consistency across cloud-based infrastructures.</li>
-              <li>Modernized legacy case management systems by integrating up-to-date technologies, including Angular for front-end and C# for back-end development, coupled with SQL Server for data management.</li>
-            </ul>
-          </article>
-
-          <article class="resume-role">
-            <div class="resume-role-head">
-              <h3>Intern</h3>
-              <p class="resume-role-meta">VHI Healthcare • Dublin, Ireland • January 2018 – September 2018</p>
-            </div>
-            <ul class="resume-bullets">
-              <li>Completed a work placement, providing an excellent learning opportunity.</li>
-              <li>Enhanced comprehension of IT functions within a business context and learned essential elements for constructing and organizing IT projects.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section class="resume-card" aria-label="Education">
-        <div class="resume-card-head">
-          <h2>Education</h2>
-        </div>
-
-        <article class="resume-edu">
-          <h3>Bachelor of Science in Computer Science</h3>
-          <p class="resume-role-meta">Technology University of Dublin, Ireland • 2015 – 2019</p>
-        </article>
-      </section>
+      <div class="resume-actions">
+        <button class="button download-btn" (click)="downloadResume()">Download Resume</button>
+      </div>
     </div>
-  </div>
-
-  <div class="resume-footer">
-    <button class="button download-btn" (click)="downloadResume()">Download Resume</button>
   </div>
 </div>

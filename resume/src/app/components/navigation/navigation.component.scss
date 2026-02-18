@@ -8,11 +8,12 @@ nav {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1100px;
-  background: var(--nav-bg-color);
-  padding: 10px 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  backdrop-filter: blur(15px);
+  background: color-mix(in srgb, var(--nav-bg-color) 88%, transparent);
+  padding: 10px 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(16px);
   z-index: 1000;
 }
 
@@ -21,7 +22,7 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -29,20 +30,23 @@ nav ul li a {
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   font-size: 16px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  position: relative;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
 }
 
 nav ul li a.active {
   background: rgba(255, 255, 255, 0.14);
-  font-weight: bold;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .hamburger {
@@ -52,51 +56,73 @@ nav ul li a.active {
   border: none;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.92);
-  transition: transform 0.3s ease;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .hamburger.active {
   transform: rotate(90deg);
 }
 
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
 .toggle-button {
-  display: inline-block;
-  padding: 12px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 900;
   cursor: pointer;
   border: none;
   outline: none;
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  color: var(--dark-charcoal);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.toggle-button-icon {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
 }
 
 .toggle-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+  filter: saturate(1.05);
 }
 
 .toggle-button:active {
-  transform: scale(0.95);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(0px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .light-mode {
-  background: linear-gradient(135deg, var(--cool-silver), var(--light-gray));
-  color: var(--dark-charcoal);
-  transition: background 0.3s ease;
+  background: var(--nav-bg-color);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .dark-mode {
-  background: linear-gradient(135deg, var(--slate-gray), var(--muted-plum));
-  color: var(--slate-white);
+  background: color-mix(in srgb, var(--muted-plum) 55%, var(--dark-charcoal));
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.toggle-button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.22),
+    0 0 0 3px color-mix(in srgb, var(--muted-plum) 38%, transparent);
 }
 
 @media screen and (max-width: 1024px) {
@@ -145,12 +171,12 @@ nav ul li a.active {
     font-size: 18px;
     padding: 12px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 12px;
   }
 
   .toggle-button {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
     font-size: 18px;
   }
 }
@@ -165,8 +191,20 @@ nav ul li a.active {
   }
 
   .toggle-button {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav ul li a,
+  .toggle-button,
+  .hamburger {
+    transition: none;
+  }
+  nav ul li a:hover,
+  .toggle-button:hover {
+    transform: none;
   }
 }

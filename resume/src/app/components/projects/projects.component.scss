@@ -29,7 +29,7 @@
 
 .projects-subtitle {
     margin: 8px 0 0;
-    color: var(--slate-gray);
+    color: var(--muted-text-color);
     font-weight: 700;
     letter-spacing: 0.2px;
     line-height: 1.35;
@@ -68,8 +68,8 @@
     justify-content: center;
     padding: 44px 20px;
     border-radius: 18px;
-    background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
-    border: 1px solid rgba(37, 36, 41, 0.10);
+    background: var(--box-bg);
+    border: 1px solid var(--box-border-color);
 }
 
 .projects-spinner {
@@ -83,7 +83,7 @@
 
 .projects-loading-text {
     margin: 14px 0 0;
-    color: var(--slate-gray);
+    color: var(--muted-text-color);
     font-weight: 800;
 }
 
@@ -99,8 +99,8 @@
 .projects-empty {
     padding: 26px;
     border-radius: 18px;
-    border: 1px solid rgba(37, 36, 41, 0.10);
-    background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
+    border: 1px solid var(--box-border-color);
+    background: var(--box-bg);
 }
 
 .projects-empty-title {
@@ -119,10 +119,10 @@
     position: relative;
     padding: 16px;
     border-radius: 18px;
-    background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
-    border: 1px solid rgba(37, 36, 41, 0.12);
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
-    transition: transform 180ms ease, box-shadow 180ms ease;
+    background: var(--box-bg);
+    border: 1px solid var(--box-border-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     overflow: hidden;
     min-height: 182px;
     display: flex;
@@ -141,8 +141,9 @@
 }
 
 .project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 26px rgba(0, 0, 0, 0.14);
+    transform: translateY(-3px);
+    background: var(--box-bg-hover);
+    box-shadow: var(--box-shadow-hover);
 }
 
 .project-card-head {
@@ -174,7 +175,7 @@
 
 .project-desc {
     margin: 10px 0 0;
-    color: var(--slate-gray);
+    color: var(--muted-text-color);
     line-height: 1.5;
     font-weight: 600;
     display: -webkit-box;
@@ -194,15 +195,15 @@
 .meta-pill {
     padding: 6px 10px;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-    border: 1px solid rgba(37, 36, 41, 0.10);
+    background: var(--box-bg);
+    border: 1px solid var(--box-border-color);
     color: var(--primary-text-color);
     font-weight: 900;
     font-size: 0.85rem;
 }
 
 .meta-item {
-    color: var(--slate-gray);
+    color: var(--muted-text-color);
     font-weight: 900;
     font-size: 0.9rem;
 }
@@ -220,8 +221,8 @@
     justify-content: center;
     padding: 10px 12px;
     border-radius: 12px;
-    background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-    border: 1px solid rgba(37, 36, 41, 0.10);
+    background: var(--box-bg);
+    border: 1px solid var(--box-border-color);
     color: var(--primary-text-color);
     text-decoration: none;
     font-weight: 900;

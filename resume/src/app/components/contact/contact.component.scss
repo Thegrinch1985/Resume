@@ -21,7 +21,7 @@
 .contact-subtitle {
   margin: 10px auto 0;
   max-width: 60ch;
-  color: var(--slate-gray);
+  color: var(--muted-text-color);
   font-weight: 800;
   line-height: 1.55;
 }
@@ -37,10 +37,11 @@
   position: relative;
   padding: 16px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
-  border: 1px solid rgba(37, 36, 41, 0.12);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
+  background: var(--box-bg);
+  border: 1px solid var(--box-border-color);
+  box-shadow: var(--box-shadow);
   overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .contact-card::before {
@@ -55,7 +56,17 @@
 }
 
 .contact-card--alt {
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+  background: var(--box-bg);
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+  background: var(--box-bg-hover);
+}
+
+.contact-card--alt:hover {
+  background: var(--box-bg-hover);
 }
 
 .contact-card-head h2 {
@@ -67,7 +78,7 @@
 
 .contact-card-note {
   margin: 8px 0 0;
-  color: var(--slate-gray);
+  color: var(--muted-text-color);
   font-weight: 800;
   line-height: 1.5;
 }
@@ -116,14 +127,10 @@
 
 .submit-btn {
   width: 100%;
-  margin-top: 12px;
+  margin: 12px 0 0;
   padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(37, 36, 41, 0.12);
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
-  color: var(--primary-text-color);
-  font-weight: 900;
-  cursor: pointer;
+  text-transform: none;
 }
 
 .submit-btn:disabled {
@@ -160,10 +167,32 @@
   border-radius: 16px;
   border: 1px solid rgba(37, 36, 41, 0.10);
   background: rgba(255, 255, 255, 0.28);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 [data-theme='dark'] .info-item {
   background: rgba(0, 0, 0, 0.12);
+}
+
+.info-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.36);
+}
+
+[data-theme='dark'] .info-item:hover {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .info-item {
+    transition: none;
+  }
+  .contact-card:hover,
+  .info-item:hover {
+    transform: none;
+  }
 }
 
 .icon {

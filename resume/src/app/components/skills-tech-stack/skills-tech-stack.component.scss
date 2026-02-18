@@ -28,7 +28,7 @@
 
 .skills-subtitle {
   margin: 8px 0 0;
-  color: var(--slate-gray);
+  color: var(--muted-text-color);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -43,10 +43,10 @@
   position: relative;
   padding: 16px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--slate-white), var(--light-gray));
-  border: 1px solid rgba(37, 36, 41, 0.12);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  background: var(--box-bg);
+  border: 1px solid var(--box-border-color);
+  box-shadow: var(--box-shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
   overflow: hidden;
 }
 
@@ -62,8 +62,9 @@
 }
 
 .skills-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 26px rgba(0, 0, 0, 0.14);
+  transform: translateY(-3px);
+  background: var(--box-bg-hover);
+  box-shadow: var(--box-shadow-hover);
 }
 
 .skills-card-head {
@@ -104,7 +105,7 @@
 
 .skills-pill {
   font-size: 0.95rem;
-  background: linear-gradient(135deg, var(--light-gray), var(--slate-gray));
+  background: var(--box-bg);
   padding: 8px 12px;
   border-radius: 999px;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
@@ -114,7 +115,7 @@
 }
 
 .skills-pill:hover {
-  background: linear-gradient(135deg, var(--slate-gray), var(--light-gray));
+  background: var(--box-bg-hover);
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
