@@ -11,7 +11,7 @@ import {
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss'],
 })
-export class WorkExperienceComponent  {
+export class WorkExperienceComponent {
   @ViewChild('scrollRoot', { static: true })
   private scrollRootRef!: ElementRef<HTMLElement>;
 
@@ -31,10 +31,38 @@ export class WorkExperienceComponent  {
 
   experiences = [
     {
+      company: 'Workday',
+      location: 'Dublin, Ireland',
+      role: 'Software Development Engineer',
+      duration: 'March 2026 - present',
+      details: [
+        'Building core components of a large-scale integration platform enabling secure and reliable enterprise data connectivity.',
+        'Designing and developing high-quality, scalable systems using Java, with strong focus on concurrency and performance.',
+        'Applying design patterns and modular architecture to create reusable, maintainable components.',
+        'Working with distributed systems and modern infrastructure including Kafka, Kubernetes, and relational databases.',
+        'Collaborating within a high-performing engineering team, contributing to shared goals through strong communication and teamwork.',
+        'Driving innovation by solving complex problems at global scale while continuously learning and adapting to new technologies.'
+      ]
+    },
+    {
+      company: 'DeadWax',
+      location: 'Dublin, Ireland',
+      role: 'Founder & iOS Engineer',
+      duration: '2025 - Present',
+      details: [
+        'Designed and developed a production-ready iOS app using Swift and SwiftUI, focused on delivering a premium vinyl collection experience.',
+        'Integrated Discogs API for real-time collection syncing, marketplace data, and rich metadata.',
+        'Implemented audio recognition features using ShazamKit, enabling seamless “Drop the Needle” listening experiences.',
+        'Built iCloud sync using Core Data and CloudKit to ensure reliable cross-device data persistence.',
+        'Engineered visually engaging UI features including animated turntables, record walls, and listening analytics.',
+        'Managed end-to-end product lifecycle including development, CI/CD (Xcode Cloud), App Store deployment, and iterative feature releases.'
+      ]
+    },
+    {
       company: 'QUESTAX (CONTRACTED TO BMW GROUP)',
       location: 'Munich, Germany',
       role: 'Full Stack Developer',
-      duration: 'June 2022 – Present',
+      duration: 'June 2022 – February 2026',
       details: [
         'Collaborating on a significant project employing Angular and .NET, with containerization using Docker and orchestration via Kubernetes.',
         'Maintained high-quality code standards through rigorous unit and integration testing.',
@@ -178,7 +206,9 @@ export class WorkExperienceComponent  {
     }, 160);
   }
 
-  getYearLabel(duration: string): string {
+  getYearLabel(duration: string | undefined): string {
+    if (!duration) return '';
+
     const matches = duration.match(/\b\d{4}\b/g) ?? [];
     const years = Array.from(new Set(matches));
 

@@ -10,11 +10,18 @@ export class ResumeComponent {
     'Angular', 'TypeScript', 'JavaScript',
     'HTML5', 'CSS3', 'SCSS',
     '.NET', 'C#', 'Node.js',
+    'Java', 'Concurrency & Multithreading',
     'RESTful APIs', 'GraphQL',
     'Docker', 'Kubernetes', 'Microsoft Azure',
-    'Git', 'Agile Development',
+    'Kafka', 'Distributed Systems',
+    'MySQL', 'SQL Databases',
+    'iOS Development', 'Swift', 'SwiftUI',
+    'Core Data', 'CloudKit', 'ShazamKit',
+    'CI/CD (Xcode Cloud)', 'App Store Deployment',
+    'Git', 'Agile Development', 'Scrum',
     'Testing Frameworks: Karma, Jasmine, Cypress'
   ];
+
 
   downloadResume(): void {
     const link = document.createElement('a');
